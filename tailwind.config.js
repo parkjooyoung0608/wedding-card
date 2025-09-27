@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         birthstone: ['"Birthstone"', "cursive"],
+        lora: ['"Lora"', "serif"],
         body: ["system-ui", "Avenir", "Helvetica", "Arial", "sans-serif"],
       },
       keyframes: {
