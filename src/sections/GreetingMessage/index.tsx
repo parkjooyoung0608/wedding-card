@@ -1,4 +1,5 @@
 import GsapSection from "@/components/GsapSection";
+import { BRIDE_FULL, GROOM_FULL } from "@/config/config";
 
 export default function GreetingMessage() {
   const messages = [
@@ -27,7 +28,9 @@ export default function GreetingMessage() {
           {msg}
         </p>
       ))}
-      <p className="gsap-item p-10">신랑 김상균 · 신부 김지연</p>
+      <p className="gsap-item p-10">
+        신랑 {BRIDE_FULL} · 신부 {GROOM_FULL}
+      </p>
     </GsapSection>
   );
 }

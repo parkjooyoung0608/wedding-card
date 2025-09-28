@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BRIDE_FIRST, GROOM_FIRST } from "@/config/config";
 
 export default function Countdown() {
   const targetDate = new Date("2026-06-13T11:00:00"); // 2026년 6월 13일 오전 11시
@@ -50,7 +51,7 @@ export default function Countdown() {
         {renderItem(timeLeft.seconds, "seconds")}
       </div>
       <div className="gsap-item py-8">
-        상균 ♥️ 지연 결혼식이{" "}
+        {BRIDE_FIRST} ♥️ {GROOM_FIRST} 결혼식이{" "}
         <span className="text-[#6b99b0]">{timeLeft.days + 1}일</span>{" "}
         남았습니다.
       </div>
