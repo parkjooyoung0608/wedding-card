@@ -23,4 +23,17 @@ interface ITimelineItem {
   textPosition: "text-left" | "text-right";
 }
 
-export type { TPolaroidMode, IPolaroid, ISectionTitle, ITimelineItem };
+interface IGalleryModal {
+  modalIndex: number;
+  closeModal: (e: React.MouseEvent) => void;
+  showPrev: (e: React.MouseEvent) => void;
+  showNext: (e: React.MouseEvent) => void;
+}
+
+export type {
+  TPolaroidMode,
+  IPolaroid,
+  ISectionTitle,
+  ITimelineItem,
+  IGalleryModal,
+};
