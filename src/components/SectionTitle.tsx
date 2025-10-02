@@ -1,5 +1,10 @@
 import type { ISectionTitle } from "@/@Interface";
 
+const bgMap: Record<string, string> = {
+  brand: "bg-brand",
+  brandLight: "bg-brandLight",
+};
+
 export default function SectionTitle({
   title,
   descFirst,
@@ -9,7 +14,9 @@ export default function SectionTitle({
 }: ISectionTitle) {
   return (
     <div
-      className="flex flex-col items-center justify-center h-full gsap-div min-h-80 py-20 px-4"
+      className={`flex flex-col items-center justify-center h-full gsap-div min-h-80 py-20 px-4 ${
+        bgMap[bgColor] ?? ""
+      }`}
       style={{ backgroundColor: bgColor }}
     >
       <h1 className="gsap-item font-lora">{title}</h1>

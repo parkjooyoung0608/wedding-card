@@ -37,7 +37,7 @@ export default function Countdown() {
     <div className="flex-grow w-full py-4 bg-white rounded-lg shadow-lg">
       <div className="flex flex-col items-center font-extralight gap-y-3">
         <div className="text-2xl">{value}</div>
-        <div className="uppercase text-[#999999] text-xs">{label}</div>
+        <div className="uppercase text-gray-500 text-xs">{label}</div>
       </div>
     </div>
   );
@@ -52,8 +52,7 @@ export default function Countdown() {
       </div>
       <div className="gsap-item py-8">
         {BRIDE_FIRST} ♥️ {GROOM_FIRST} 결혼식이{" "}
-        <span className="text-[#6b99b0]">{timeLeft.days + 1}일</span>{" "}
-        남았습니다.
+        <span className="text-brand">{timeLeft.days + 1}일</span> 남았습니다.
       </div>
     </>
   );

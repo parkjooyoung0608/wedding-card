@@ -48,9 +48,7 @@ export default function Polaroid({ mode, birthDate, tagline }: IPolaroid) {
 
       {/* 이름 */}
       <div className="w-full h-auto flex-shrink-0">
-        <span className="mr-1 font-semibold !text-[rgb(107,153,176)]">
-          {labelMap[mode]}
-        </span>
+        <span className="mr-1 font-semibold !text-brand">{labelMap[mode]}</span>
         <span>{nameMap[mode]}</span>
       </div>
 

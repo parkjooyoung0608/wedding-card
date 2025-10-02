@@ -1,6 +1,6 @@
 export default function Calendar() {
   return (
-    <div className="font-normal grid grid-cols-7 gap-y-6 text-center font-extralight">
+    <div className="font-normal grid grid-cols-7 gap-y-6 text-center">
       {/* 요일 */}
       <div className="gsap-opacity text-red-400">일</div>
       <div className="gsap-opacity">월</div>
@@ -19,7 +19,7 @@ export default function Calendar() {
       <div className="px-2 py-1 gsap-opacity">3</div>
       <div className="px-2 py-1 gsap-opacity">4</div>
       <div className="px-2 py-1 gsap-opacity">5</div>
-      <div className="px-2 py-1 gsap-opacity text-tog-666">6</div>
+      <div className="px-2 py-1 gsap-opacity text-sky-700">6</div>
       <div className="px-2 py-1 gsap-opacity text-red-400">7</div>
       <div className="px-2 py-1 gsap-opacity ">8</div>
       <div className="px-2 py-1 gsap-opacity">9</div>
@@ -27,7 +27,7 @@ export default function Calendar() {
       <div className="px-2 py-1 gsap-opacity">11</div>
       <div className="px-2 py-1 gsap-opacity">12</div>
       <div className="flex justify-center gsap-opacity gsap-opacity">
-        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#6B99B0] text-white font-extralight">
+        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-brand text-white font-extralight">
           13
         </div>
       </div>
@@ -37,14 +37,14 @@ export default function Calendar() {
       <div className="px-2 py-1 gsap-opacity">17</div>
       <div className="px-2 py-1 gsap-opacity">18</div>
       <div className="px-2 py-1 gsap-opacity">19</div>
-      <div className="px-2 py-1 gsap-opacity text-tog-666">20</div>
+      <div className="px-2 py-1 gsap-opacity text-sky-700">20</div>
       <div className="px-2 py-1 gsap-opacity text-red-400">21</div>
       <div className="px-2 py-1 gsap-opacity">22</div>
       <div className="px-2 py-1 gsap-opacity">23</div>
       <div className="px-2 py-1 gsap-opacity">24</div>
       <div className="px-2 py-1 gsap-opacity">25</div>
       <div className="px-2 py-1 gsap-opacity">26</div>
-      <div className="px-2 py-1 gsap-opacity text-tog-666">27</div>
+      <div className="px-2 py-1 gsap-opacity text-sky-700">27</div>
       <div className="px-2 py-1 gsap-opacity text-red-400">28</div>
       <div className="px-2 py-1 gsap-opacity">29</div>
       <div className="px-2 py-1 gsap-opacity">30</div>

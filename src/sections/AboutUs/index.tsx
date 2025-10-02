@@ -9,7 +9,7 @@ export default function AboutUs() {
         title="ABOUT US"
         descFirst="저희 커플을 소개합니다"
         descSecond="하나로 이어진 두개의 우주"
-        bgColor="rgb(215, 228, 235)"
+        bgColor="brandLight"
       >
         <div className="gsap-opacity mt-4 w-3/4 flex flex-col space-y-4">
           <Polaroid

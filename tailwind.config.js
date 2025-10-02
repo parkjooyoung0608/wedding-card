@@ -10,6 +10,7 @@ module.exports = {
       },
       colors: {
         brand: "#6b99b0",
+        brandLight: "#d7e4eb",
       },
       keyframes: {
         slideUpFade: {
