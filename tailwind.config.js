@@ -8,6 +8,9 @@ module.exports = {
         lora: ['"Lora"', "serif"],
         body: ["system-ui", "Avenir", "Helvetica", "Arial", "sans-serif"],
       },
+      colors: {
+        brand: "#6b99b0",
+      },
       keyframes: {
         slideUpFade: {
           "0%": { opacity: "1", transform: "translateY(0)" },

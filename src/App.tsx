@@ -3,6 +3,7 @@ import Hero from "@/sections/Hero";
 import GreetingMessage from "@/sections/GreetingMessage";
 import WeddingDay from "@/sections/WeddingDay";
 import AboutUs from "@/sections/AboutUs";
+import Timeline from "@/sections/Timeline";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <GreetingMessage />
         <WeddingDay />
         <AboutUs />
+        <Timeline />
       </div>
     </div>
   );
