@@ -2,6 +2,7 @@ import Play from "@/components/Play";
 import Hero from "@/sections/Hero";
 import GreetingMessage from "@/sections/GreetingMessage";
 import WeddingDay from "@/sections/WeddingDay";
+import AboutUs from "@/sections/AboutUs";
 import "./App.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Hero />
         <GreetingMessage />
         <WeddingDay />
+        <AboutUs />
       </div>
     </div>
   );

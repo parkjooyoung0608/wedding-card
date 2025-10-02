@@ -1,4 +1,4 @@
-import React from "react";
+import type { ISectionTitle } from "@/@Interface";
 
 export default function SectionTitle({
   title,
@@ -6,15 +6,12 @@ export default function SectionTitle({
   descSecond,
   children,
   bgColor,
-}: {
-  title: string;
-  descFirst: string;
-  descSecond?: string;
-  children: React.ReactNode;
-  bgColor: string;
-}) {
+}: ISectionTitle) {
   return (
-    <div className="pt-20 px-4" style={{ backgroundColor: bgColor }}>
+    <div
+      className="flex flex-col items-center justify-center h-full gsap-div min-h-80 py-20 px-4"
+      style={{ backgroundColor: bgColor }}
+    >
       <h1 className="gsap-item font-lora">{title}</h1>
       <div className="p-10">
         <p className="gsap-item mb-2">{descFirst}</p>
