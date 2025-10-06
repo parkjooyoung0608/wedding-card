@@ -9,7 +9,7 @@ module.exports = {
         body: ["system-ui", "Avenir", "Helvetica", "Arial", "sans-serif"],
       },
       colors: {
-        brand: "#6b99b0",
+        brand: "#81a8bc",
         brandLight: "#d7e4eb",
       },
       keyframes: {
