@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Copy, Phone } from "lucide-react";
+import Toast from "@/components/Toast";
 import type { ISectionTitle } from "@/@Interface";
 
 const bgMap: Record<string, string> = {
@@ -65,11 +66,7 @@ export default function SectionTitle({
       </div>
       {children}
 
-      {showToast && (
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-4 py-2 rounded-lg shadow-md animate-toastSlide">
-          ✅ 주소가 복사되었습니다.
-        </div>
-      )}
+      {showToast && <Toast title="주소가 복사되었습니다." />}
     </div>
   );
 }
