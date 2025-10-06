@@ -26,11 +26,30 @@ module.exports = {
           "50%": { transform: "scaleY(2)" },
           "100%": { transform: "scaleY(1)" },
         },
+        toastSlide: {
+          "0%": {
+            opacity: "0",
+            transform: "translate(-50%, 30px)",
+          },
+          "10%": {
+            opacity: "1",
+            transform: "translate(-50%, 0)",
+          },
+          "90%": {
+            opacity: "1",
+            transform: "translate(-50%, 0)",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translate(-50%, 30px)",
+          },
+        },
       },
       animation: {
         slideUpFade: "slideUpFade 1.5s ease-out forwards",
         twinkle: "twinkle 1.5s ease-in-out infinite",
         barMove: "barMove 2s ease-in-out infinite alternate",
+        toastSlide: "toastSlide 2s ease-in-out forwards",
       },
     },
   },

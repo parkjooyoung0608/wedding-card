@@ -5,6 +5,7 @@ import WeddingDay from "@/sections/WeddingDay";
 import AboutUs from "@/sections/AboutUs";
 import Timeline from "@/sections/Timeline";
 import Gallery from "@/sections/Gallery";
+import Location from "@/sections/Location";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <AboutUs />
         <Timeline />
         <Gallery />
+        <Location />
       </div>
     </div>
   );

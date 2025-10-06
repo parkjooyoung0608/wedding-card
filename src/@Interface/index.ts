@@ -10,6 +10,9 @@ interface ISectionTitle {
   title: string;
   descFirst: string;
   descSecond?: string;
+  hasCopy?: boolean;
+  hasPhone?: boolean;
+  phoneNumber?: string;
   children: React.ReactNode;
   bgColor: string;
 }

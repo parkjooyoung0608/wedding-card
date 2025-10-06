@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Copy, Phone } from "lucide-react";
 import type { ISectionTitle } from "@/@Interface";
 
 const bgMap: Record<string, string> = {
@@ -9,9 +11,21 @@ export default function SectionTitle({
   title,
   descFirst,
   descSecond,
+  hasCopy,
+  hasPhone,
+  phoneNumber,
   children,
   bgColor,
 }: ISectionTitle) {
+  const [showToast, setShowToast] = useState(false);
+
+  const handleCopy = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 2000);
+    });
+  };
+
   return (
     <div
       className={`flex flex-col items-center justify-center h-full gsap-div min-h-80 py-20 px-4 ${
@@ -21,14 +35,41 @@ export default function SectionTitle({
     >
       <h1 className="gsap-item font-lora">{title}</h1>
       <div className="p-10">
-        <p className="gsap-item mb-2">{descFirst}</p>
+        <div className="gsap-item flex justify-center items-center mb-2 gap-1">
+          <p>{descFirst}</p>
+          {hasPhone && (
+            <a
+              href={`tel:${phoneNumber}`}
+              className="text-gray-600 hover:text-black transition"
+              title="전화 걸기"
+            >
+              <Phone size={15} />
+            </a>
+          )}
+        </div>
+
         {descSecond && (
-          <p className="gsap-item font-[#111] font-light opacity-50 ">
-            {descSecond}
-          </p>
+          <div className="gsap-item flex justify-center items-center mb-2 gap-1">
+            <p className="font-light opacity-50">{descSecond}</p>
+            {hasCopy && (
+              <button
+                onClick={() => handleCopy(descSecond)}
+                className="text-gray-500 hover:text-black transition"
+                title="복사하기"
+              >
+                <Copy size={15} />
+              </button>
+            )}
+          </div>
         )}
       </div>
       {children}
+
+      {showToast && (
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-4 py-2 rounded-lg shadow-md animate-toastSlide">
+          ✅ 주소가 복사되었습니다.
+        </div>
+      )}
     </div>
   );
 }
