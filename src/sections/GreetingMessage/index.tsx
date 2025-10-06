@@ -29,7 +29,7 @@ export default function GreetingMessage() {
         </p>
       ))}
       <p className="gsap-item p-10">
-        신랑 {BRIDE_FULL} · 신부 {GROOM_FULL}
+        신랑 {GROOM_FULL} · 신부 {BRIDE_FULL}
       </p>
     </GsapSection>
   );

@@ -13,12 +13,12 @@ export default function AboutUs() {
       >
         <div className="gsap-opacity mt-4 w-3/4 flex flex-col space-y-4">
           <Polaroid
-            mode="bride"
+            mode="groom"
             birthDate="1995년 12월 서울 출생"
             tagline="호기심 많은 손재주 왕 📽"
           />
           <Polaroid
-            mode="groom"
+            mode="bride"
             birthDate="1995년 11월 서울 출생"
             tagline="호기심 많은 손재주 왕 📽"
           />
