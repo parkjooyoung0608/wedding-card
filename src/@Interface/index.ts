@@ -33,10 +33,17 @@ interface IGalleryModal {
   showNext: (e: React.MouseEvent) => void;
 }
 
+interface IKakaoPayIcon {
+  width?: number;
+  height?: number;
+  fill?: string;
+}
+
 export type {
   TPolaroidMode,
   IPolaroid,
   ISectionTitle,
   ITimelineItem,
   IGalleryModal,
+  IKakaoPayIcon,
 };
