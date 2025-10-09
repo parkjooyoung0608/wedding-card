@@ -1,4 +1,10 @@
 import heroWedding from "@/assets/images/hero-wedding.jpg";
+import {
+  BRIDE_FIRST_EN,
+  GROOM_FIRST_EN,
+  WEDDING_DATE_NUMBER,
+  WEDDING_DAY_EN,
+} from "@/config/config";
 
 /**
  * 메인 랜딩 페이지
@@ -47,9 +53,12 @@ export default function Hero() {
             We are getting married
           </h1>
           <div className="text-base mt-4">
-            <span className="text-[0.8rem]">SANGGYUN</span>
-            <span className="text-[0.8rem]"> | 2025. 06. 13 SAT | </span>
-            <span className="text-[0.8rem]">JIYEON</span>
+            <span className="text-[0.8rem]">{GROOM_FIRST_EN}</span>
+            <span className="text-[0.8rem]">
+              {" "}
+              | {WEDDING_DATE_NUMBER} {WEDDING_DAY_EN} |{" "}
+            </span>
+            <span className="text-[0.8rem]">{BRIDE_FIRST_EN}</span>
           </div>
         </div>
       </div>

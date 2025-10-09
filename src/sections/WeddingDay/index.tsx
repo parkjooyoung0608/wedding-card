@@ -2,14 +2,21 @@ import GsapSection from "@/components/GsapSection";
 import SectionTitle from "@/components/SectionTitle";
 import Countdown from "@/sections/WeddingDay/Countdown";
 import Calendar from "@/sections/WeddingDay/Calendar";
+import {
+  WEDDING_DATE,
+  WEDDING_DATE_EN,
+  WEDDING_DAY,
+  WEDDING_TIME,
+  WEDDING_TIME_NUMBER,
+} from "@/config/config";
 
 export default function WeddingDay() {
   return (
     <GsapSection>
       <SectionTitle
         title="WEDDING DAY"
-        descFirst="2026년 6월 13일 토요일 | 오전 11시"
-        descSecond="Saturday, June 13, 2026 | AM 11:00"
+        descFirst={`${WEDDING_DATE} ${WEDDING_DAY} | ${WEDDING_TIME}`}
+        descSecond={`${WEDDING_DATE_EN} | ${WEDDING_TIME_NUMBER}`}
         bgColor="rgb(248, 248, 248)"
       >
         <hr className="gsap-item pb-8" />
