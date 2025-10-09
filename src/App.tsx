@@ -6,6 +6,7 @@ import AboutUs from "@/sections/AboutUs";
 import Timeline from "@/sections/Timeline";
 import Gallery from "@/sections/Gallery";
 import Location from "@/sections/Location";
+import Donation from "@/sections/Donation";
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Timeline />
         <Gallery />
         <Location />
+        <Donation />
       </div>
     </div>
   );
