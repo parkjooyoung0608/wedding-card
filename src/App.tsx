@@ -8,6 +8,7 @@ import Gallery from "@/sections/Gallery";
 import Location from "@/sections/Location";
 import Donation from "@/sections/Donation";
 import GuestBook from "@/sections/GuestBook";
+import Share from "@/sections/Share";
 import "./App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Location />
         <Donation />
         <GuestBook />
+        <Share />
       </div>
     </div>
   );
