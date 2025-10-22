@@ -25,7 +25,7 @@ export default function Item({
               fetchPriority="high"
               decoding="async"
               data-nimg="fill"
-              className="absolute object-cover w-full h-full md:rounded-t-3xl filter brightness-75"
+              className="absolute object-cover w-full h-full rounded-3xl filter brightness-75"
               src={image}
               style={{ inset: "0px", color: "transparent" }}
             ></img>
