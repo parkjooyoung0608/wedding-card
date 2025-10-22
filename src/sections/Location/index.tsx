@@ -21,7 +21,7 @@ export default function Location() {
         bgColor="brandLight"
       >
         {/* TODO: 달력 */}
-        <div className="w-full">
+        <div className="gsap-item w-full">
           {/* 자차 안내 */}
           <section className="text-left mb-5">
             <Title title="자차">
