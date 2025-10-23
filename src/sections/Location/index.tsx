@@ -2,7 +2,7 @@ import {
   BusFront,
   CarFront,
   CircleParking,
-  TrainFrontTunnel,
+  // TrainFrontTunnel,
 } from "lucide-react";
 import GsapSection from "@/components/GsapSection";
 import SectionTitle from "@/components/SectionTitle";
@@ -34,22 +34,32 @@ export default function Location() {
 
           {/* 버스 안내 */}
           <section className="text-left mb-5">
-            <Title title="버스">
+            <Title title="대중교통">
               <BusFront size={18} />
             </Title>
-            <p>버스로 오는 방법을 여기에 작성하세요.</p>
+            <div className="mb-5">
+              <p className="font-bold">버스로 오는 법</p>
+              <p>버스로 오는 방법을 여기에 작성하세요.</p>
+            </div>
+            <div>
+              <p className="font-bold">지하철로 오는 법</p>
+              <p className="text-[#f16fa3] font-bold">8호선(문정역)</p>
+              <p>문정역 3번 출구 &gt; 도보 9분</p>
+            </div>
+            <div className="mt-3">
+              <p className="text-[#f16fa3] font-bold">* 셔틀버스</p>
+              <p>버스로 오는 방법을 여기에 작성하세요.</p>
+            </div>
           </section>
           <hr className="border-brand" />
 
           {/* 지하철 안내 */}
-          <section className="text-left mb-5">
+          {/* <section className="text-left mb-5">
             <Title title="지하철">
               <TrainFrontTunnel size={18} />
             </Title>
-            <p className="text-[#f16fa3] font-bold">8호선(문정역)</p>
-            <p>문정역 3번 출구 &gt; 도보 9분</p>
           </section>
-          <hr className="border-brand" />
+          <hr className="border-brand" /> */}
 
           {/* 주차 안내 */}
           <section className="text-left mb-5">

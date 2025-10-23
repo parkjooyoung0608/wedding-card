@@ -21,21 +21,21 @@ const timelineList: ITimelineItem[] = [
     flexPosition: "flex-row-reverse",
     textPosition: "text-right",
   },
-  {
-    image: groomProfile,
-    date: "첫 데이트 장소에서",
-    title: "💍 프로포즈",
-    desc: "준비는 오래, 대답은 짧게.\n“YES!”",
-    flexPosition: "flex-row",
-    textPosition: "text-left",
-  },
+  // {
+  //   image: groomProfile,
+  //   date: "첫 데이트 장소에서",
+  //   title: "💍 프로포즈",
+  //   desc: "준비는 오래, 대답은 짧게.\n“YES!”",
+  //   flexPosition: "flex-row",
+  //   textPosition: "text-left",
+  // },
   {
     image: groomProfile,
     date: "26년 6월 13일, 서울",
     title: "👰‍♀️🤵 웨딩데이",
     desc: "이제는 둘이 아닌\n하나로 걷기 시작하는 날",
-    flexPosition: "flex-row-reverse",
-    textPosition: "text-right",
+    flexPosition: "flex-row",
+    textPosition: "text-left",
   },
 ];
 

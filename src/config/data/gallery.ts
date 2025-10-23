@@ -1,6 +1,6 @@
 import groomProfile from "@/assets/Images/groom-profile.png";
 
-const photos = [
+export const photos = [
   groomProfile,
   groomProfile,
   groomProfile,
@@ -18,5 +18,3 @@ const photos = [
   groomProfile,
   groomProfile,
 ];
-
-export { photos };
