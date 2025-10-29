@@ -1,3 +1,5 @@
+import type { Timestamp } from "firebase/firestore";
+
 type TPolaroidMode = "bride" | "groom";
 
 interface IPolaroid {
@@ -39,6 +41,22 @@ interface IKakaoPayIcon {
   fill?: string;
 }
 
+interface IMessage {
+  id: string;
+  name: string;
+  password: string;
+  message: string;
+  createdAt?: Timestamp | null;
+}
+
+interface IDeleteModal {
+  docId: string;
+  docPassword: string;
+  showToast: (msg: string) => void;
+  onSuccess?: () => void;
+  onClose: () => void;
+}
+
 export type {
   TPolaroidMode,
   IPolaroid,
@@ -46,4 +64,6 @@ export type {
   ITimelineItem,
   IGalleryModal,
   IKakaoPayIcon,
+  IMessage,
+  IDeleteModal,
 };
