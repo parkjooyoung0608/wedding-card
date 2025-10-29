@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Copy, Phone } from "lucide-react";
 import Toast from "@/components/Toast";
+import copy from "@/utils/copy";
 import type { ISectionTitle } from "@/@Interface";
 
 const bgMap: Record<string, string> = {
@@ -19,13 +20,6 @@ export default function SectionTitle({
   bgColor,
 }: ISectionTitle) {
   const [showToast, setShowToast] = useState(false);
-
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text).then(() => {
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 2000);
-    });
-  };
 
   return (
     <div
@@ -54,7 +48,7 @@ export default function SectionTitle({
             <p className="font-light opacity-50">{descSecond}</p>
             {hasCopy && (
               <button
-                onClick={() => handleCopy(descSecond)}
+                onClick={() => copy(descSecond, () => setShowToast(true))}
                 className="text-gray-500 hover:text-black transition"
                 title="복사하기"
               >

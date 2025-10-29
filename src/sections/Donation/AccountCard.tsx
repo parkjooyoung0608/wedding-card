@@ -3,18 +3,12 @@ import { Copy } from "lucide-react";
 import { KakaoPay } from "@/assets/Icons";
 import { accountData } from "@/config/data/account";
 import Toast from "@/components/Toast";
+import copy from "@/utils/copy";
 
 export default function AccountCard({ mode }: { mode: "groom" | "bride" }) {
   const selectedData = accountData[mode];
 
   const [showToast, setShowToast] = useState(false);
-
-  const handleCopy = (accountNumber: string) => {
-    navigator.clipboard.writeText(accountNumber).then(() => {
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 2000);
-    });
-  };
 
   return (
     <div className="overflow-hidden text-sm transition-all px-3 py-4 rounded-b-lg bg-brandLight">
@@ -31,7 +25,9 @@ export default function AccountCard({ mode }: { mode: "groom" | "bride" }) {
               </div>
               <div className="mt-6">
                 <button
-                  onClick={() => handleCopy(item.accountNumber)}
+                  onClick={() =>
+                    copy(item.accountNumber, () => setShowToast(true))
+                  }
                   className="text-sm font-medium disabled:pointer-events-none py-2 bg-[#F4F4F4] rounded-lg h-12 flex justify-between items-center px-4 w-full"
                 >
                   <div className="text-start">
