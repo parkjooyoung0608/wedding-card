@@ -1,12 +1,49 @@
+import { useEffect, useState } from "react";
 import {
   BusFront,
   CarFront,
   CircleParking,
   // TrainFrontTunnel,
 } from "lucide-react";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
 import GsapSection from "@/components/GsapSection";
 import SectionTitle from "@/components/SectionTitle";
 import Title from "@/sections/Location/Title";
+
+const Maps = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const s_lat = 37.55465;
+  const s_lng = 126.970598;
+
+  useEffect(() => {
+    const kakaoScript = document.createElement("script");
+    kakaoScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${
+      import.meta.env.VITE_KAKAO_MAP_API_KEY
+    }&autoload=false`;
+    kakaoScript.async = true;
+    kakaoScript.onload = () => {
+      window.kakao.maps.load(() => setIsLoaded(true));
+    };
+    document.head.appendChild(kakaoScript);
+
+    return () => {
+      document.head.removeChild(kakaoScript);
+    };
+  }, []);
+
+  if (!isLoaded) return <div>Loading Map...</div>;
+
+  return (
+    <Map
+      center={{ lat: s_lat, lng: s_lng }}
+      style={{ width: "100%", height: "360px" }}
+      level={3}
+    >
+      <MapMarker position={{ lat: s_lat, lng: s_lng }} />
+    </Map>
+  );
+};
 
 export default function Location() {
   return (
@@ -20,7 +57,7 @@ export default function Location() {
         phoneNumber="02-6281-9000"
         bgColor="brandLight"
       >
-        {/* TODO: 달력 */}
+        <Maps />
         <div className="gsap-item w-full">
           {/* 자차 안내 */}
           <section className="text-left mb-5">
