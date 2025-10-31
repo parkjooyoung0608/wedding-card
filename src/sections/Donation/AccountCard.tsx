@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Copy } from "lucide-react";
-import { KakaoPay } from "@/assets/Icons";
+// import { KakaoPay } from "@/assets/Icons";
 import { accountData } from "@/config/data/account";
 import Toast from "@/components/Toast";
 import copy from "@/utils/copy";
@@ -26,7 +26,7 @@ export default function AccountCard({ mode }: { mode: "groom" | "bride" }) {
               <div className="mt-6">
                 <button
                   onClick={() =>
-                    copy(item.accountNumber, () => setShowToast(true))
+                    copy(item.accountNumber, () => setShowToast(!showToast))
                   }
                   className="text-sm font-medium disabled:pointer-events-none py-2 bg-[#F4F4F4] rounded-lg h-12 flex justify-between items-center px-4 w-full"
                 >
@@ -36,7 +36,7 @@ export default function AccountCard({ mode }: { mode: "groom" | "bride" }) {
                   </div>
                   <div className="flex items-center space-x-2">
                     <Copy size={18} />
-                    <KakaoPay />
+                    {/* <KakaoPay /> */}
                   </div>
                 </button>
               </div>

@@ -48,7 +48,7 @@ export default function SectionTitle({
             <p className="font-light opacity-50">{descSecond}</p>
             {hasCopy && (
               <button
-                onClick={() => copy(descSecond, () => setShowToast(true))}
+                onClick={() => copy(descSecond, () => setShowToast(!showToast))}
                 className="text-gray-500 hover:text-black transition"
                 title="복사하기"
               >
