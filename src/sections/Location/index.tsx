@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   BusFront,
   CarFront,
@@ -9,30 +8,55 @@ import { Map, MapMarker } from "react-kakao-maps-sdk";
 import GsapSection from "@/components/GsapSection";
 import SectionTitle from "@/components/SectionTitle";
 import Title from "@/sections/Location/Title";
+import { useEffect, useState } from "react";
 
-const Maps = () => {
+export function Maps() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const s_lat = 37.55465;
   const s_lng = 126.970598;
 
   useEffect(() => {
-    const kakaoScript = document.createElement("script");
-    kakaoScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${
-      import.meta.env.VITE_KAKAO_MAP_API_KEY
+    const script = document.createElement("script");
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${
+      import.meta.env.VITE_KAKAO_API_KEY
     }&autoload=false`;
-    kakaoScript.async = true;
-    kakaoScript.onload = () => {
+    script.async = true;
+    script.onload = () => {
+      if (window.kakao && window.kakao.maps) {
+        window.kakao.maps.load(() => setIsLoaded(true));
+      }
+    };
+    script.onerror = () => console.error("Kakao Maps SDK failed to load");
+    document.head.appendChild(script);
+  }, []);
+
+  useEffect(() => {
+    // 이미 로드된 경우 방지
+    if (window.kakao && window.kakao.maps) {
+      setIsLoaded(true);
+      return;
+    }
+
+    // ✅ 지도 SDK 로드
+    const script = document.createElement("script");
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${
+      import.meta.env.VITE_KAKAO_API_KEY
+    }&autoload=false`;
+    script.async = true;
+
+    script.onload = () => {
       window.kakao.maps.load(() => setIsLoaded(true));
     };
-    document.head.appendChild(kakaoScript);
+
+    document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(kakaoScript);
+      document.head.removeChild(script);
     };
   }, []);
 
-  if (!isLoaded) return <div>Loading Map...</div>;
+  if (!isLoaded) return <div>지도를 불러오는 중...</div>;
 
   return (
     <Map
@@ -43,7 +67,7 @@ const Maps = () => {
       <MapMarker position={{ lat: s_lat, lng: s_lng }} />
     </Map>
   );
-};
+}
 
 export default function Location() {
   return (
