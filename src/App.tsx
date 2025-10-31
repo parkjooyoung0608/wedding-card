@@ -12,6 +12,48 @@ import GuestBook from "@/sections/GuestBook";
 import Share from "@/sections/Share";
 import "./App.css";
 
+declare global {
+  interface Window {
+    Kakao: KakaoNamespace;
+  }
+
+  interface KakaoNamespace {
+    init: (key: string) => void;
+    isInitialized: () => boolean;
+    Share: {
+      sendDefault: (options: KakaoShareOptions) => void;
+    };
+  }
+
+  interface KakaoShareOptions {
+    objectType: "feed" | "text" | "list" | "location" | "commerce" | "custom";
+    content: {
+      title: string;
+      description?: string;
+      imageUrl?: string;
+      link: {
+        mobileWebUrl: string;
+        webUrl: string;
+      };
+    };
+    buttons?: {
+      title: string;
+      link: {
+        mobileWebUrl: string;
+        webUrl: string;
+      };
+    }[];
+  }
+}
+
+if (
+  typeof window !== "undefined" &&
+  window.Kakao &&
+  !window.Kakao.isInitialized()
+) {
+  window.Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
+}
+
 function App() {
   return (
     <div className="md:py-12 md:rounded-3xl">
