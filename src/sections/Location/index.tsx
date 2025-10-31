@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   BusFront,
   CarFront,
@@ -10,8 +11,27 @@ import SectionTitle from "@/components/SectionTitle";
 import Title from "@/sections/Location/Title";
 
 export default function Location() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const s_lat = 37.484743;
   const s_lng = 127.117105;
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${
+      import.meta.env.VITE_KAKAO_API_KEY
+    }&autoload=false`;
+    script.async = true;
+
+    script.onload = () => {
+      window.kakao.maps.load(() => setIsLoaded(true));
+    };
+
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   return (
     <GsapSection>
@@ -24,23 +44,29 @@ export default function Location() {
         phoneNumber="02-6281-9000"
         bgColor="brandLight"
       >
-        <div className="relative w-full h-[200px]">
-          <Map
-            center={{ lat: s_lat, lng: s_lng }}
-            style={{ width: "100%", height: "100%" }}
-            level={3}
-          >
-            <MapMarker position={{ lat: s_lat, lng: s_lng }} />
-          </Map>
-          {/* 지도 위 버튼 */}
-          <a
-            href="https://kko.kakao.com/choviAone5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute top-2 left-2 px-3 py-1 bg-black/50 text-white text-xs rounded-md font-medium transition z-10 "
-          >
-            카카오맵으로 열기
-          </a>
+        <div className="gsap-item relative w-full h-[200px]">
+          {!isLoaded ? (
+            <div>지도 로딩 중...</div>
+          ) : (
+            <>
+              <Map
+                center={{ lat: s_lat, lng: s_lng }}
+                style={{ width: "100%", height: "100%" }}
+                level={3}
+              >
+                <MapMarker position={{ lat: s_lat, lng: s_lng }} />
+              </Map>
+              {/* 지도 위 버튼 */}
+              <a
+                href="https://kko.kakao.com/choviAone5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-2 left-2 px-3 py-1 bg-black/50 text-white text-xs rounded-md font-medium transition z-10 "
+              >
+                카카오맵으로 열기
+              </a>
+            </>
+          )}
         </div>
 
         <div className="gsap-item w-full">
