@@ -1,4 +1,6 @@
-import heroWedding from "@/assets/images/hero-wedding.jpg";
+// import heroWedding from "@/assets/Images/weddingPhoto_25.jpg";
+import { useState, useEffect } from "react";
+import img05 from "@/assets/Images/weddingPhoto_05.jpg";
 import {
   // BRIDE_FIRST_EN,
   BRIDE_FULL,
@@ -12,10 +14,21 @@ import {
  * 메인 랜딩 페이지
  */
 export default function Hero() {
+  // 모바일 브라우저 100vh 이슈 해결을 위해 높이 고정
+  const [heroHeight, setHeroHeight] = useState("100vh");
+
+  useEffect(() => {
+    // 처음 마운트 될 때의 높이로 고정 (주소창이 사라져도 높이가 변하지 않도록)
+    setHeroHeight(`${window.innerHeight}px`);
+  }, []);
+
   const sparkles = Array.from({ length: 60 });
 
   return (
-    <div className="h-screen relative md:rounded-t-3xl overflow-hidden">
+    <div
+      className="relative md:rounded-t-3xl overflow-hidden shrink-0"
+      style={{ height: heroHeight }}
+    >
       {/* 반짝이 레이어 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-[100]">
         {sparkles.map((_, i) => {
@@ -45,7 +58,7 @@ export default function Hero() {
       <div
         className="whitespace-normal w-full break-all absolute z-10 px-2 text-white"
         style={{
-          top: " 50%",
+          top: "60%",
           left: "50%",
           transform: "translate(-50%, -50%)",
         }}
@@ -79,8 +92,8 @@ export default function Hero() {
         decoding="async"
         data-nimg="fill"
         className="absolute object-cover w-full h-full md:rounded-t-3xl filter brightness-75"
-        src={heroWedding}
-        style={{ inset: "0px", color: "transparent" }}
+        src={img05}
+        style={{ inset: "0px", color: "transparent", transform: "translateZ(0)" }}
       ></img>
     </div>
   );
