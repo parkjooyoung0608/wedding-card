@@ -44,15 +44,12 @@ export default function Gallery() {
           descFirst="사진을 클릭하시면 전체 화면 보기가 가능합니다"
           bgColor="#fff"
         >
-          <div className="relative mb-[4px]">
+          <div className="relative mb-[4px] w-full aspect-[3/4] bg-gray-50">
             <img
               src={photos[modalIndex ?? 0]}
               alt={groomProfile}
-              className="w-full h-auto object-cover touch-none"
+              className="w-full h-full object-contain touch-none"
             />
-            <p className="absolute bottom-0 left-0 p-2 bg-black text-white z-10">
-              {modalIndex} * 번호는 사라질거에용
-            </p>
           </div>
 
           <div className="flex gap-[2px] overflow-x-auto scrollbar-hide">
@@ -64,12 +61,11 @@ export default function Gallery() {
                 <img
                   src={photo}
                   alt={`photo-${idx}`}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-full object-cover"
                   onClick={() => handlePhotoClick(idx)}
+                  loading="lazy"
+                  decoding="async"
                 />
-                <div className="absolute bottom-0 left-0 p-2 bg-black text-white z-10">
-                  {idx}
-                </div>
               </div>
             ))}
           </div>
