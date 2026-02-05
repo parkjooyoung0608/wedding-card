@@ -24,7 +24,7 @@ export default function Share() {
       content: {
         title: "💌 우리의 결혼식에 초대합니다",
         description: "소중한 날, 함께 해주세요.",
-        imageUrl: "https://your-image-url.com/thumbnail.jpg", // ✅ 썸네일 이미지 URL
+        imageUrl: "https://wedding-card-sgjy.web.app/og-image.jpg", // ✅ 썸네일 이미지 URL
         link: {
           mobileWebUrl: window.location.href,
           webUrl: window.location.href,
