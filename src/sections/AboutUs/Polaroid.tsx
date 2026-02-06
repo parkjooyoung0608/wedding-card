@@ -22,8 +22,8 @@ export default function Polaroid({ mode, birthDate, tagline }: IPolaroid) {
   };
 
   const parentsNameMap: Record<TPolaroidMode, string> = {
-    bride: `${BRIDE_FATHER} · ${BRIDE_MOTHER}의 아들`,
-    groom: `${GROOM_FATHER} · ${GROOM_MOTHER}의 딸`,
+    bride: `${BRIDE_FATHER} · ${BRIDE_MOTHER}의 딸`,
+    groom: `${GROOM_FATHER} · ${GROOM_MOTHER}의 아들`,
   };
 
   const profileMap: Record<TPolaroidMode, string> = {
