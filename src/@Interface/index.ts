@@ -57,7 +57,13 @@ interface IDeleteModal {
   onClose: () => void;
 }
 
+interface IPhoto {
+  src: string;
+  position?: string;
+}
+
 export type {
+  IPhoto,
   TPolaroidMode,
   IPolaroid,
   ISectionTitle,

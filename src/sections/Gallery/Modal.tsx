@@ -20,7 +20,7 @@ export default function Modal({
 
       {/* 사진 */}
       <img
-        src={photos[modalIndex]}
+        src={photos[modalIndex].src}
         alt={`modal-${modalIndex}`}
         className="max-w-full max-h-[80vh] mx-auto"
       />

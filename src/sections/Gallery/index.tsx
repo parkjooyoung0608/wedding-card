@@ -46,9 +46,12 @@ export default function Gallery() {
         >
           <div className="relative mb-[4px] w-full aspect-[3/4] bg-gray-50">
             <img
-              src={photos[modalIndex ?? 0]}
+              src={photos[modalIndex ?? 0].src}
               alt={groomProfile}
               className="w-full h-full object-contain touch-none"
+              style={{
+                objectPosition: photos[modalIndex ?? 0].position || "center",
+              }}
             />
           </div>
 
@@ -59,9 +62,10 @@ export default function Gallery() {
                 className="relative cursor-pointer flex-shrink-0 w-1/3 max-w-[calc((100%-4px)/3)]"
               >
                 <img
-                  src={photo}
+                  src={photo.src}
                   alt={`photo-${idx}`}
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: photo.position || "center" }}
                   onClick={() => handlePhotoClick(idx)}
                   loading="lazy"
                   decoding="async"
@@ -75,7 +79,7 @@ export default function Gallery() {
             {photos.slice(0, visibleCount).map((photo, idx) => (
               <div key={idx} className="cursor-pointer">
                 <img
-                  src={photo}
+                  src={photo.src}
                   alt={`photo-${idx}`}
                   className="w-full h-auto object-cover"
                   onClick={() => handlePhotoClick(idx)}

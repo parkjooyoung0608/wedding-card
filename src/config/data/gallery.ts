@@ -11,42 +11,19 @@ import img09 from "@/assets/Images/weddingPhoto_09.jpg";
 import img10 from "@/assets/Images/weddingPhoto_10.jpg";
 import img11 from "@/assets/Images/weddingPhoto_11.jpg";
 import img12 from "@/assets/Images/weddingPhoto_12.jpg";
-import img13 from "@/assets/Images/weddingPhoto_13.jpg";
-import img14 from "@/assets/Images/weddingPhoto_14.jpg";
-import img15 from "@/assets/Images/weddingPhoto_15.jpg";
-import img16 from "@/assets/Images/weddingPhoto_16.jpg";
-import img17 from "@/assets/Images/weddingPhoto_17.jpg";
-import img18 from "@/assets/Images/weddingPhoto_18.jpg";
-import img22 from "@/assets/Images/weddingPhoto_22.jpg";
-import img23 from "@/assets/Images/weddingPhoto_23.jpg";
-import img24 from "@/assets/Images/weddingPhoto_24.jpg";
-import img25 from "@/assets/Images/weddingPhoto_25.jpg";
-import img26 from "@/assets/Images/weddingPhoto_26.jpg";
-import img27 from "@/assets/Images/weddingPhoto_27.jpg";
+import type { IPhoto } from "@/@Interface";
 
-export const photos = [
-  img01,
-  img02,
-  img03,
-  img04,
-  img05,
-  img06,
-  img07,
-  img08,
-  img09,
-  img10,
-  img11,
-  img12,
-  img13,
-  img14,
-  img15,
-  img16,
-  img17,
-  img18,
-  img22,
-  img23,
-  img24,
-  img25,
-  img26,
-  img27,
+export const photos: IPhoto[] = [
+  { src: img01 },
+  { src: img02 },
+  { src: img03 },
+  { src: img04 },
+  { src: img05 },
+  { src: img06 },
+  { src: img07 },
+  { src: img08 },
+  { src: img09 },
+  { src: img10, position: "80% center" },
+  { src: img11 },
+  { src: img12 },
 ];

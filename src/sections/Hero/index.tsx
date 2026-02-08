@@ -1,6 +1,5 @@
-// import heroWedding from "@/assets/Images/weddingPhoto_25.jpg";
 import { useState, useEffect } from "react";
-import img05 from "@/assets/Images/weddingPhoto_05.jpg";
+import heroWedding from "@/assets/Images/hero-wedding.jpg";
 import {
   // BRIDE_FIRST_EN,
   BRIDE_FULL,
@@ -92,7 +91,7 @@ export default function Hero() {
         decoding="async"
         data-nimg="fill"
         className="absolute object-cover w-full h-full md:rounded-t-3xl filter brightness-75"
-        src={img05}
+        src={heroWedding}
         style={{ inset: "0px", color: "transparent", transform: "translateZ(0)" }}
       ></img>
     </div>
