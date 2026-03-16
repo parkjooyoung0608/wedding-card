@@ -1,36 +1,41 @@
 import GsapSection from "@/components/GsapSection";
+import SectionTitle from "@/components/SectionTitle";
 import { BRIDE_FULL, GROOM_FULL } from "@/config/config";
 
 export default function GreetingMessage() {
   const messages = [
-    "사람이 온다는 건 실은 어마어마한 일이다.",
-    "그는 그의 과거와 현재와 그리고",
-    "그의 미래와 함께 오기 때문이다.",
-    "한 사람의 일생이 오기 때문이다.",
+    "서로의 부족함까지 예쁘게 바라보며",
+    "사랑과 신뢰로 한 가정을 이루려 합니다.",
   ];
 
   const messages2 = [
     "저희 두 사람이 함께하는 새로운 시작에",
-    "귀한 발걸음으로 축복해 주시면 감사하겠습니다.",
+    "귀한 발걸음으로 함께해주시면 감사하겠습니다.",
   ];
 
   return (
     <GsapSection>
-      <div className="pt-14"></div>
-      {messages.map((msg, index) => (
-        <p key={msg + index} className="gsap-item h-[32px]">
-          {msg}
-        </p>
-      ))}
-      <p className="gsap-item p-10">- 정현종, '방문객'</p>
-      {messages2.map((msg, index) => (
-        <p key={msg + index} className="gsap-item h-[32px]">
-          {msg}
-        </p>
-      ))}
-      <p className="gsap-item p-10">
-        신랑 {GROOM_FULL} · 신부 {BRIDE_FULL}
-      </p>
+      <SectionTitle title="INVITATION" bgColor="#fff">
+        <div className="flex flex-col items-center text-center">
+          {messages.map((msg, index) => (
+            <p key={msg + index} className="gsap-item h-[32px]">
+              {msg}
+            </p>
+          ))}
+
+          <div className="py-2"></div>
+
+          {messages2.map((msg, index) => (
+            <p key={msg + index} className="gsap-item h-[32px]">
+              {msg}
+            </p>
+          ))}
+
+          <p className="gsap-item p-10">
+            신랑 <span className="text-point">{GROOM_FULL}</span> · 신부 <span className="text-point">{BRIDE_FULL}</span>
+          </p>
+        </div>
+      </SectionTitle>
     </GsapSection>
   );
 }
