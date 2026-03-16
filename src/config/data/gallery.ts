@@ -8,9 +8,6 @@ import img06 from "@/assets/Images/weddingPhoto_06.jpg";
 import img07 from "@/assets/Images/weddingPhoto_07.jpg";
 import img08 from "@/assets/Images/weddingPhoto_08.jpg";
 import img09 from "@/assets/Images/weddingPhoto_09.jpg";
-import img10 from "@/assets/Images/weddingPhoto_10.jpg";
-import img11 from "@/assets/Images/weddingPhoto_11.jpg";
-import img12 from "@/assets/Images/weddingPhoto_12.jpg";
 import type { IPhoto } from "@/@Interface";
 
 export const photos: IPhoto[] = [
@@ -23,7 +20,4 @@ export const photos: IPhoto[] = [
   { src: img07 },
   { src: img08 },
   { src: img09 },
-  { src: img10, position: "80% center" },
-  { src: img11 },
-  { src: img12 },
 ];
