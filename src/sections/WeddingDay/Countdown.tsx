@@ -51,8 +51,8 @@ export default function Countdown() {
         {renderItem(timeLeft.seconds, "seconds")}
       </div>
       <div className="gsap-item py-8">
-        {BRIDE_FIRST} ♥️ {GROOM_FIRST} 결혼식이{" "}
-        <span className="text-brand">{timeLeft.days + 1}일</span> 남았습니다.
+        {GROOM_FIRST} ♥️ {BRIDE_FIRST} 결혼식이{" "}
+        <span className="text-point">{timeLeft.days + 1}일</span> 남았습니다.
       </div>
     </>
   );

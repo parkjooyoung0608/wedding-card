@@ -19,7 +19,7 @@ export default function Calendar() {
       <div className="px-2 py-1 gsap-opacity">3</div>
       <div className="px-2 py-1 gsap-opacity">4</div>
       <div className="px-2 py-1 gsap-opacity">5</div>
-      <div className="px-2 py-1 gsap-opacity text-sky-700">6</div>
+       <div className="px-2 py-1 gsap-opacity text-sky-700">6</div>
       <div className="px-2 py-1 gsap-opacity text-red-400">7</div>
       <div className="px-2 py-1 gsap-opacity ">8</div>
       <div className="px-2 py-1 gsap-opacity">9</div>
@@ -27,7 +27,7 @@ export default function Calendar() {
       <div className="px-2 py-1 gsap-opacity">11</div>
       <div className="px-2 py-1 gsap-opacity">12</div>
       <div className="flex justify-center gsap-opacity gsap-opacity">
-        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-brand text-white font-extralight">
+        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-point/20 text-point font-bold">
           13
         </div>
       </div>
