@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import heroWedding from "@/assets/Images/hero-wedding.jpg";
 import {
   // BRIDE_FIRST_EN,
-  BRIDE_FULL,
+  // BRIDE_FULL,
   // GROOM_FIRST_EN,
-  GROOM_FULL,
+  // GROOM_FULL,
   WEDDING_DATE_NUMBER,
   WEDDING_DAY_EN,
 } from "@/config/config";
@@ -67,19 +67,19 @@ export default function Hero() {
             We are getting married
           </h1>
           <div className="text-base my-4">
-            {/* <span className="text-[0.8rem]">{GROOM_FIRST_EN}</span> */}
+             {/* <span className="text-[0.8rem]">{GROOM_FIRST_EN}</span> */}
             <span className="text-[0.8rem]">
               {WEDDING_DATE_NUMBER} {WEDDING_DAY_EN}
             </span>
-            {/* <span className="text-[0.8rem]">{BRIDE_FIRST_EN}</span> */}
+             {/* <span className="text-[0.8rem]">{BRIDE_FIRST_EN}</span> */}
           </div>
-          <p className="gsap-item">저희 두 사람이 함께하는 새로운 시작에</p>
+          {/* <p className="gsap-item">저희 두 사람이 함께하는 새로운 시작에</p>
           <p className="gsap-item">
             귀한 발걸음으로 축복해 주시면 감사하겠습니다.
           </p>
           <p className="gsap-item">
             신랑 {GROOM_FULL} · 신부 {BRIDE_FULL}
-          </p>
+          </p> */}
         </div>
       </div>
 
