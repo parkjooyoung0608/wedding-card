@@ -31,6 +31,11 @@ export default function GuestBook() {
         } as IMessage)
     );
     setMessages(data);
+    
+    // 메시지 로드 후 스크롤 트리거 갱신
+    import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+      ScrollTrigger.refresh();
+    });
   };
 
   const openDeleteModal = (id: string, password: string) => {
@@ -50,13 +55,13 @@ export default function GuestBook() {
   }, []);
 
   return (
-    <GsapSection>
+    <GsapSection key={messages.length}>
       <SectionTitle
         title="MESSAGE"
         descFirst="저희 둘에게 따뜻한 방명록을 남겨주세요"
       >
         {messages.length > 0 && (
-          <div className="gsap-item flex flex-col gap-4 max-h-96 overflow-y-auto w-full px-4 mb-10">
+          <div className="flex flex-col gap-4 max-h-96 overflow-y-auto w-full px-4 mb-10">
             {messages.map((msg, index) => (
               <div
                 key={msg + String(index)}

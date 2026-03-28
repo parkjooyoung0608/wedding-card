@@ -39,7 +39,7 @@ export default function Gallery() {
             {photos.map((photo, idx) => (
               <div
                 key={idx}
-                className="relative cursor-pointer aspect-square overflow-hidden group"
+                className="gsap-item relative cursor-pointer aspect-square overflow-hidden group"
                 onClick={() => handlePhotoClick(idx)}
               >
                 <img
