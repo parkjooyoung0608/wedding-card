@@ -59,11 +59,11 @@ export default function Modal({
 
       {/* 하단 정보 및 네비게이션 (Mobile friendly) */}
       <div 
-        className="flex items-center justify-between w-full max-w-sm px-10 mt-8 text-gray-500"
+        className="flex items-center justify-center w-full max-w-sm mt-8 text-gray-500 relative h-10"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="p-2 text-gray-400 disabled:opacity-20 md:hidden"
+          className="absolute left-10 p-2 text-gray-400 disabled:opacity-20 md:hidden"
           onClick={showPrev}
           disabled={modalIndex === 0}
         >
@@ -75,7 +75,7 @@ export default function Modal({
         </p>
 
         <button
-          className="p-2 text-gray-400 disabled:opacity-20 md:hidden"
+          className="absolute right-10 p-2 text-gray-400 disabled:opacity-20 md:hidden"
           onClick={showNext}
           disabled={modalIndex === photos.length - 1}
         >
