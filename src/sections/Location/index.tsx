@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import {
   BusFront,
   CarFront,
-  CircleParking,
-  // TrainFrontTunnel,
 } from "lucide-react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import GsapSection from "@/components/GsapSection";
@@ -29,7 +27,9 @@ export default function Location() {
 
     document.head.appendChild(script);
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 
@@ -38,13 +38,12 @@ export default function Location() {
       <SectionTitle
         title="LOCATION"
         descFirst="루이비스컨벤션 웨딩홀"
-        descSecond="문정동 645-2"
+        descSecond="서울시 송파구 법원로 9길 26 H비지니스파크 D동 B1 층 아모리스홀"
         hasCopy
         hasPhone
         phoneNumber="02-6281-9000"
-        bgColor="brandLight"
       >
-        <div className="gsap-item relative w-full h-[200px]">
+        <div className="gsap-item relative w-full h-[250px] mb-10 rounded-xl overflow-hidden shadow-sm">
           {!isLoaded ? (
             <div>지도 로딩 중...</div>
           ) : (
@@ -61,7 +60,7 @@ export default function Location() {
                 href="https://kko.kakao.com/choviAone5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-2 left-2 px-3 py-1 bg-black/50 text-white text-xs rounded-md font-medium transition z-10 "
+                className="absolute top-2 left-2 px-3 py-1 bg-white/90 text-black text-xs rounded-md font-medium shadow-md z-10 hover:bg-white transition"
               >
                 카카오맵으로 열기
               </a>
@@ -69,52 +68,60 @@ export default function Location() {
           )}
         </div>
 
-        <div className="gsap-item w-full">
+        <div className="gsap-item w-full space-y-6 px-2 pb-10">
           {/* 자차 안내 */}
-          <section className="text-left mb-5">
+          <section className="text-left">
             <Title title="자차">
-              <CarFront size={18} />
+              <CarFront size={18} className="text-point" />
             </Title>
-            <p>내비게이션 : '루이비스컨벤션웨딩홀 검색'</p>
-            <p>서울 송파구 문정동 645-2</p>
+            <div className="text-[0.85rem] space-y-2 text-gray-600 leading-relaxed">
+              <p>네비게이션 : <span className="text-gray-800 font-semibold">‘루이비스컨벤션’</span> 또는 <span className="text-gray-800 font-semibold">‘주소’</span> 입력</p>
+              <p className="text-[0.8rem]">* 건물 내 A,B동 C,D동 B1~B4층 1300여대 주차 가능</p>
+              <p className="text-[0.8rem] text-point font-bold">* 2시간 무료주차</p>
+            </div>
           </section>
           <hr className="border-brand" />
 
           {/* 버스 안내 */}
-          <section className="text-left mb-5">
+          <section className="text-left mb-2">
             <Title title="대중교통">
               <BusFront size={18} />
             </Title>
             <div className="mb-5">
               <p className="font-bold">버스로 오는 법</p>
-              <p>버스로 오는 방법을 여기에 작성하세요.</p>
+                <p className="font-semibold text-gray-800">문정 로데오거리 하차</p>
+              <ul className="space-y-1.5 ml-1">
+                <li className="flex gap-2">
+                  <span className="shrink-0 text-green-400 font-bold">- 일반버스(초록) :</span>
+                  <span>30, 31, 32, 331, 100, 119</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="shrink-0 text-blue-400 font-bold">- 간선버스(파랑) :</span>
+                  <span>302, 303, 320, 333, 343, 345, 350, 360</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="shrink-0 text-green-400 font-bold">- 지선버스(초록) :</span>
+                  <span>3420</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="shrink-0 text-red-400 font-bold">- 광역버스(빨강) :</span>
+                  <span>9403</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="shrink-0 text-red-400 font-bold">- 직행좌석버스(빨강) :</span>
+                  <span>500-1, 1009, 1112, 1117, 1650, 3302, G2100</span>
+                </li>
+              </ul>
             </div>
+          </section>
+          {/* 지하철 안내 */}
+          <section className="text-left">
             <div>
               <p className="font-bold">지하철로 오는 법</p>
               <p className="text-[#f16fa3] font-bold">8호선(문정역)</p>
-              <p>문정역 3번 출구 &gt; 도보 9분</p>
+              <p>문정역 4번출구 &gt; 도보 10분</p>
+              <p className="text-[0.8rem] font-bold text-point">* 4번출구 앞 셔틀버스 10분 배차 운행</p>
             </div>
-            <div className="mt-3">
-              <p className="text-[#f16fa3] font-bold">* 셔틀버스</p>
-              <p>버스로 오는 방법을 여기에 작성하세요.</p>
-            </div>
-          </section>
-          <hr className="border-brand" />
-
-          {/* 지하철 안내 */}
-          {/* <section className="text-left mb-5">
-            <Title title="지하철">
-              <TrainFrontTunnel size={18} />
-            </Title>
-          </section>
-          <hr className="border-brand" /> */}
-
-          {/* 주차 안내 */}
-          <section className="text-left mb-5">
-            <Title title="주차">
-              <CircleParking size={18} />
-            </Title>
-            <p>주차 관련 안내를 여기에 작성하세요.</p>
           </section>
         </div>
       </SectionTitle>
