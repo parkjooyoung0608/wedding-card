@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
-import {
-  BusFront,
-  CarFront,
-} from "lucide-react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import GsapSection from "@/components/GsapSection";
 import SectionTitle from "@/components/SectionTitle";
-import Title from "@/sections/Location/Title";
 
 export default function Location() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -71,43 +66,37 @@ export default function Location() {
         <div className="gsap-item w-full space-y-6 px-2 pb-10">
           {/* 자차 안내 */}
           <section className="text-left">
-            <Title title="자차">
-              <CarFront size={18} className="text-point" />
-            </Title>
-            <div className="text-[0.85rem] space-y-2 text-gray-600 leading-relaxed">
+            <p className="font-bold">자차</p>
+            <div className="text-[0.85rem] text-gray-600 leading-relaxed">
               <p>네비게이션 : <span className="text-gray-800 font-semibold">‘루이비스컨벤션’</span> 또는 <span className="text-gray-800 font-semibold">‘주소’</span> 입력</p>
               <p className="text-[0.8rem]">* 건물 내 A,B동 C,D동 B1~B4층 1300여대 주차 가능</p>
-              <p className="text-[0.8rem] text-point font-bold">* 2시간 무료주차</p>
+              <p className="text-[0.8rem]">* 2시간 무료주차</p>
             </div>
           </section>
-          <hr className="border-brand" />
 
           {/* 버스 안내 */}
           <section className="text-left mb-2">
-            <Title title="대중교통">
-              <BusFront size={18} />
-            </Title>
             <div className="mb-5">
               <p className="font-bold">버스로 오는 법</p>
-                <p className="font-semibold text-gray-800">문정 로데오거리 하차</p>
-              <ul className="space-y-1.5 ml-1">
-                <li className="flex gap-2">
+                <p className="text-gray-800">문정 로데오거리 하차</p>
+              <ul className="space-y-0.5 ml-1">
+                <li className="flex gap-1">
                   <span className="shrink-0 text-green-400 font-bold">- 일반버스(초록) :</span>
                   <span>30, 31, 32, 331, 100, 119</span>
                 </li>
-                <li className="flex gap-2">
+                <li className="flex gap-1">
                   <span className="shrink-0 text-blue-400 font-bold">- 간선버스(파랑) :</span>
                   <span>302, 303, 320, 333, 343, 345, 350, 360</span>
                 </li>
-                <li className="flex gap-2">
+                <li className="flex gap-1">
                   <span className="shrink-0 text-green-400 font-bold">- 지선버스(초록) :</span>
                   <span>3420</span>
                 </li>
-                <li className="flex gap-2">
+                <li className="flex gap-1">
                   <span className="shrink-0 text-red-400 font-bold">- 광역버스(빨강) :</span>
                   <span>9403</span>
                 </li>
-                <li className="flex gap-2">
+                <li className="flex gap-1">
                   <span className="shrink-0 text-red-400 font-bold">- 직행좌석버스(빨강) :</span>
                   <span>500-1, 1009, 1112, 1117, 1650, 3302, G2100</span>
                 </li>
@@ -118,9 +107,10 @@ export default function Location() {
           <section className="text-left">
             <div>
               <p className="font-bold">지하철로 오는 법</p>
-              <p className="text-[#f16fa3] font-bold">8호선(문정역)</p>
-              <p>문정역 4번출구 &gt; 도보 10분</p>
-              <p className="text-[0.8rem] font-bold text-point">* 4번출구 앞 셔틀버스 10분 배차 운행</p>
+              <p>
+                <span>8호선 문정역</span> 4번출구 도보 10분
+              </p>
+              <p className="text-[0.8rem]">* 4번출구 앞 셔틀버스 10분 배차 운행</p>
             </div>
           </section>
         </div>
