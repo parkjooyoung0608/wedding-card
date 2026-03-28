@@ -15,7 +15,7 @@ export default function GreetingMessage() {
 
   return (
     <GsapSection>
-      <SectionTitle title="INVITATION" bgColor="#fff">
+      <SectionTitle title="INVITATION">
         <div className="flex flex-col items-center text-center">
           {messages.map((msg, index) => (
             <p key={msg + index} className="gsap-item h-[32px]">

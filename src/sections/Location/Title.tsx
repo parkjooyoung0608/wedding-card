@@ -8,7 +8,7 @@ export default function Title({
   children: React.ReactNode;
 }) {
   return (
-    <h3 className="font-semibold my-8 flex gap-1 text-brand">
+    <h3 className="font-semibold mt-8 mb-4 flex gap-1 text-gray-800">
       {children}
       <p>{title}</p>
     </h3>

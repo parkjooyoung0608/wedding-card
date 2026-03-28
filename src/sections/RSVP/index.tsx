@@ -16,7 +16,6 @@ export default function RSVP() {
         title="RSVP"
         descFirst="참석 의사"
         descSecond="모든 분들을 소중히 모실 수 있도록 전해주세요"
-        bgColor="#fff"
       >
         <div className="gsap-item my-6 p-8 rounded-md w-full text-center bg-brandLight">
           <div className="flex justify-center items-center gap-x-4">

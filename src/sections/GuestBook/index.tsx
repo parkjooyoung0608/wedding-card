@@ -54,7 +54,6 @@ export default function GuestBook() {
       <SectionTitle
         title="MESSAGE"
         descFirst="저희 둘에게 따뜻한 방명록을 남겨주세요"
-        bgColor="brandLight"
       >
         {messages.length > 0 && (
           <div className="gsap-item flex flex-col gap-4 max-h-96 overflow-y-auto w-full px-4 mb-10">

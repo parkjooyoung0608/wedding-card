@@ -46,7 +46,6 @@ export default function Timeline() {
         title="OUR TIMELINE"
         descFirst="저희 연애의 타임라인입니다"
         descSecond="서로에게 참 소중하고 감사한 존재"
-        bgColor="rgb(248, 248, 248)"
       >
         <div className="w-full flex flex-col gap-16 relative">
           {/* 가운데 세로 라인 */}

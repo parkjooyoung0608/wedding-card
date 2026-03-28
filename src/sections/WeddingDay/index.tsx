@@ -17,7 +17,6 @@ export default function WeddingDay() {
         title="WEDDING DAY"
         descFirst={`${WEDDING_DATE} ${WEDDING_DAY} | ${WEDDING_TIME}`}
         descSecond={`${WEDDING_DATE_EN} | ${WEDDING_TIME_NUMBER}`}
-        bgColor="rgb(248, 248, 248)"
       >
         <hr className="gsap-item pb-8" />
         <div className="gsap-item w-full px-5 gsap-item ">

@@ -9,8 +9,10 @@ module.exports = {
         body: ["system-ui", "Avenir", "Helvetica", "Arial", "sans-serif"],
       },
       colors: {
-        brand: "#81a8bc",
-        brandLight: "#d7e4eb",
+        brand: "#777777", // Grey for accents
+        point: "#f4a4a4", // Soft pink/coral color from the image
+        brandLight: "#f8f8f8", // Light grey for sections
+        brandDark: "#333333", // Dark grey for background
       },
       keyframes: {
         slideUpFade: {
