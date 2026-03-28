@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { photos } from "@/config/data/gallery";
 import type { IGalleryModal } from "@/@Interface";
+import { useEffect } from "react";
 
 export default function Modal({
   modalIndex,
@@ -8,45 +9,77 @@ export default function Modal({
   showPrev,
   showNext,
 }: IGalleryModal) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+    <div 
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm animate-in fade-in duration-300"
+      onClick={closeModal}
+    >
       {/* 닫기 버튼 */}
       <button
-        className="absolute top-2 right-2 text-gray text-lg font-bold z-50"
+        className="absolute top-6 right-6 p-2 text-gray-400 hover:text-black transition-colors z-50"
         onClick={closeModal}
       >
-        <X />
+        <X size={28} />
       </button>
 
-      {/* 사진 */}
-      <img
-        src={photos[modalIndex].src}
-        alt={`modal-${modalIndex}`}
-        className="max-w-full max-h-[80vh] mx-auto"
-      />
-
-      <div className="flex items-center justify-between absolute bottom-4 w-full text-gray-500 px-10">
-        {/* 이전 화살표 */}
+      {/* 사진 컨테이너 */}
+      <div 
+        className="relative w-full h-[70vh] flex items-center justify-center p-4"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          src={photos[modalIndex].src}
+          alt={`modal-${modalIndex}`}
+          className="max-w-full max-h-full object-contain shadow-2xl rounded-sm animate-in zoom-in duration-300"
+        />
+        
+        {/* 네비게이션 버튼 (Desktop/Tablet) */}
         <button
-          className="text-3xl font-bold z-50 disabled:opacity-50"
+          className="absolute left-4 p-2 text-gray-300 hover:text-black transition-colors disabled:opacity-20 hidden md:block"
           onClick={showPrev}
           disabled={modalIndex === 0}
         >
-          <ChevronLeft />
+          <ChevronLeft size={48} />
         </button>
-
-        {/* 총 갯수 표시 */}
-        <p className="font-semibold">
-          {modalIndex + 1} / {photos.length}
-        </p>
-
-        {/*  화살표 */}
         <button
-          className="text-3xl font-bold z-50 disabled:opacity-50"
+          className="absolute right-4 p-2 text-gray-300 hover:text-black transition-colors disabled:opacity-20 hidden md:block"
           onClick={showNext}
           disabled={modalIndex === photos.length - 1}
         >
-          <ChevronRight />
+          <ChevronRight size={48} />
+        </button>
+      </div>
+
+      {/* 하단 정보 및 네비게이션 (Mobile friendly) */}
+      <div 
+        className="flex items-center justify-between w-full max-w-sm px-10 mt-8 text-gray-500"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          className="p-2 text-gray-400 disabled:opacity-20 md:hidden"
+          onClick={showPrev}
+          disabled={modalIndex === 0}
+        >
+          <ChevronLeft size={32} />
+        </button>
+
+        <p className="font-suit text-sm tracking-widest">
+          <span className="text-point font-bold">{modalIndex + 1}</span> / {photos.length}
+        </p>
+
+        <button
+          className="p-2 text-gray-400 disabled:opacity-20 md:hidden"
+          onClick={showNext}
+          disabled={modalIndex === photos.length - 1}
+        >
+          <ChevronRight size={32} />
         </button>
       </div>
     </div>
