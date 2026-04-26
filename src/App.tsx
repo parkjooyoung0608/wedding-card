@@ -65,7 +65,7 @@ function App() {
         <Location />
         <Gallery />
         <Donation />
-        <GuestBook />
+        {/* <GuestBook /> */}
         {/* <RSVP /> */}
         <Share />
       </div>
