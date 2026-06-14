@@ -57,7 +57,7 @@ export default function Hero() {
       <div
         className="whitespace-normal w-full break-all absolute z-10 px-2 text-white"
         style={{
-          top: "60%",
+          top: "25%",
           left: "50%",
           transform: "translate(-50%, -50%)",
         }}
@@ -90,7 +90,7 @@ export default function Hero() {
         fetchPriority="high"
         decoding="async"
         data-nimg="fill"
-        className="absolute object-cover w-full h-full md:rounded-t-3xl filter brightness-75"
+        className="absolute object-contain w-full h-full md:rounded-t-3xl filter brightness-75"
         src={heroWedding}
         style={{ inset: "0px", color: "transparent", transform: "translateZ(0)" }}
       ></img>

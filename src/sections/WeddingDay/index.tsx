@@ -1,6 +1,6 @@
 import GsapSection from "@/components/GsapSection";
 import SectionTitle from "@/components/SectionTitle";
-import Countdown from "@/sections/WeddingDay/Countdown";
+// import Countdown from "@/sections/WeddingDay/Countdown";
 import Calendar from "@/sections/WeddingDay/Calendar";
 import {
   WEDDING_DATE,
@@ -24,7 +24,7 @@ export default function WeddingDay() {
           <Calendar />
           <hr className="gsap-item my-8" />
           {/* 카운트다운 */}
-          <Countdown />
+          {/* <Countdown /> */}
         </div>
       </SectionTitle>
     </GsapSection>

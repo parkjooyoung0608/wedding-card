@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BRIDE_FIRST, GROOM_FIRST } from "@/config/config";
 
 export default function Countdown() {
-  const targetDate = new Date("2026-06-13T11:00:00"); // 2026년 6월 13일 오전 11시
+  const targetDate = new Date("2026-09-19T12:20:00");
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,

@@ -7,7 +7,7 @@ import WeddingDay from "@/sections/WeddingDay";
 import Gallery from "@/sections/Gallery";
 import Location from "@/sections/Location";
 import Donation from "@/sections/Donation";
-import GuestBook from "@/sections/GuestBook";
+// import GuestBook from "@/sections/GuestBook";
 // import RSVP from "@/sections/RSVP";
 import Share from "@/sections/Share";
 import "./App.css";
