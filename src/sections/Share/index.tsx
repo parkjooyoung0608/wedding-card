@@ -24,7 +24,7 @@ export default function Share() {
       content: {
         title: "💌 우리의 결혼식에 초대합니다",
         description: "소중한 날, 함께 해주세요.",
-        imageUrl: "https://wedding-card-yhjh.web.app/og-image.jpg", // ✅ 썸네일 이미지 URL
+        imageUrl: `${window.location.origin}/og-image.jpg`, // ✅ 썸네일 이미지 URL (현재 도메인 기준)
         link: {
           mobileWebUrl: window.location.href,
           webUrl: window.location.href,
@@ -53,7 +53,7 @@ export default function Share() {
       </button>
       <button
         onClick={() =>
-          copy("https://wedding-card-yhjh.web.app/", () =>
+          copy(`${window.location.origin}/`, () =>
             setShowToast(!showToast)
           )
         }

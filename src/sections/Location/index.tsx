@@ -1,33 +1,15 @@
-import { useEffect, useState } from "react";
-import { Map, MapMarker } from "react-kakao-maps-sdk";
+import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk";
 import GsapSection from "@/components/GsapSection";
 import SectionTitle from "@/components/SectionTitle";
 
 export default function Location() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   // 영등포 웨딩그룹위더스 (서울 영등포구 영중로 55)
   const s_lat = 37.515276;
   const s_lng = 126.907277;
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${
-      import.meta.env.VITE_KAKAO_API_KEY
-    }&autoload=false`;
-    script.async = true;
-
-    script.onload = () => {
-      window.kakao.maps.load(() => setIsLoaded(true));
-    };
-
-    document.head.appendChild(script);
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
-  }, []);
+  const [loading, error] = useKakaoLoader({
+    appkey: import.meta.env.VITE_KAKAO_API_KEY,
+  });
 
   return (
     <GsapSection>
@@ -40,8 +22,14 @@ export default function Location() {
         phoneNumber="(전화번호 입력 필요)"
       >
         <div className="gsap-item relative w-full h-[250px] mb-10 rounded-xl overflow-hidden shadow-sm">
-          {!isLoaded ? (
-            <div>지도 로딩 중...</div>
+          {loading ? (
+            <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+              지도 로딩 중...
+            </div>
+          ) : error ? (
+            <div className="flex items-center justify-center h-full text-red-500 text-xs px-4 text-center">
+              지도 로드 실패: {String(error)}
+            </div>
           ) : (
             <>
               <Map

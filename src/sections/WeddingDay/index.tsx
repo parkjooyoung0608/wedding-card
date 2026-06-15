@@ -22,7 +22,6 @@ export default function WeddingDay() {
         <div className="gsap-item w-full px-5 gsap-item ">
           {/* 캘린더 */}
           <Calendar />
-          <hr className="gsap-item my-8" />
           {/* 카운트다운 */}
           {/* <Countdown /> */}
         </div>

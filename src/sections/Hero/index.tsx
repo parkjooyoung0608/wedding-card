@@ -13,20 +13,24 @@ import {
  * 메인 랜딩 페이지
  */
 export default function Hero() {
-  // 모바일 브라우저 100vh 이슈 해결을 위해 높이 고정
-  const [heroHeight, setHeroHeight] = useState("100vh");
+  // Hero 사진의 가로:세로 비율로 섹션 크기를 결정한다.
+  // 이미지가 바뀌면 자동으로 재계산되도록 onload에서 갱신.
+  const [aspectRatio, setAspectRatio] = useState<string>("961 / 1440");
 
   useEffect(() => {
-    // 처음 마운트 될 때의 높이로 고정 (주소창이 사라져도 높이가 변하지 않도록)
-    setHeroHeight(`${window.innerHeight}px`);
+    const img = new window.Image();
+    img.src = heroWedding;
+    img.onload = () => {
+      setAspectRatio(`${img.naturalWidth} / ${img.naturalHeight}`);
+    };
   }, []);
 
   const sparkles = Array.from({ length: 60 });
 
   return (
     <div
-      className="relative md:rounded-t-3xl overflow-hidden shrink-0"
-      style={{ height: heroHeight }}
+      className="relative md:rounded-t-3xl overflow-hidden shrink-0 w-full"
+      style={{ aspectRatio }}
     >
       {/* 반짝이 레이어 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-[100]">
@@ -53,35 +57,38 @@ export default function Hero() {
         })}
       </div>
 
-      {/* 웨딩 사진 위 텍스트 */}
+      {/* 상단 타이틀 */}
       <div
         className="whitespace-normal w-full break-all absolute z-10 px-2 text-white"
         style={{
-          top: "25%",
+          top: "3%",
           left: "50%",
-          transform: "translate(-50%, -50%)",
+          transform: "translate(-50%, 0)",
         }}
       >
-        <div className="flex flex-col items-center">
-          <h1 className="font-birthstone text-5xl text-center">
-            We are getting married
-          </h1>
-          <div className="text-base my-4">
-             {/* <span className="text-[0.8rem]">{GROOM_FIRST_EN}</span> */}
-            <span className="text-[0.8rem]">
-              {WEDDING_DATE_NUMBER} {WEDDING_DAY_EN}
-            </span>
-             {/* <span className="text-[0.8rem]">{BRIDE_FIRST_EN}</span> */}
-          </div>
-          {/* <p className="gsap-item">저희 두 사람이 함께하는 새로운 시작에</p>
-          <p className="gsap-item">
-            귀한 발걸음으로 축복해 주시면 감사하겠습니다.
-          </p>
-          <p className="gsap-item">
-            신랑 {GROOM_FULL} · 신부 {BRIDE_FULL}
-          </p> */}
-        </div>
+        <h1 className="font-birthstone text-5xl text-center">
+          We are getting married
+        </h1>
       </div>
+
+      {/* 하단 날짜 */}
+      <div
+        className="whitespace-normal w-full break-all absolute z-10 px-2 text-white text-center"
+        style={{
+          bottom: "8%",
+          left: "50%",
+          transform: "translate(-50%, 0)",
+        }}
+      >
+        {/* <span className="text-[0.8rem]">{GROOM_FIRST_EN}</span> */}
+        <span className="text-[0.8rem]">
+          {WEDDING_DATE_NUMBER} {WEDDING_DAY_EN}
+        </span>
+        {/* <span className="text-[0.8rem]">{BRIDE_FIRST_EN}</span> */}
+      </div>
+
+      {/* 하단 그라데이션 (배경색과 자연스럽게 블렌딩) */}
+      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-brandLight to-transparent z-[5] pointer-events-none" />
 
       {/* 웨딩 사진 */}
       <div className="absolute top-0 left-0 w-full h-full bg-transparent z-10"></div>
@@ -90,7 +97,7 @@ export default function Hero() {
         fetchPriority="high"
         decoding="async"
         data-nimg="fill"
-        className="absolute object-contain w-full h-full md:rounded-t-3xl filter brightness-75"
+        className="absolute object-cover w-full h-full md:rounded-t-3xl filter brightness-75"
         src={heroWedding}
         style={{ inset: "0px", color: "transparent", transform: "translateZ(0)" }}
       ></img>

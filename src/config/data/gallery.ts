@@ -11,8 +11,8 @@ import img09 from "@/assets/Images/weddingPhoto_09.jpg";
 import type { IPhoto } from "@/@Interface";
 
 export const photos: IPhoto[] = [
-  { src: img01 },
-  { src: img02 },
+  { src: img01, position: "center 20%" },
+  { src: img02, position: "center 20%" },
   { src: img03 },
   { src: img04 },
   { src: img05 },
