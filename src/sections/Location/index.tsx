@@ -3,9 +3,9 @@ import GsapSection from "@/components/GsapSection";
 import SectionTitle from "@/components/SectionTitle";
 
 export default function Location() {
-  // 영등포 웨딩그룹위더스 (서울 영등포구 영중로 55)
-  const s_lat = 37.515276;
-  const s_lng = 126.907277;
+  // 영등포 웨딩그룹위더스 (서울 영등포구 영중로 55 / 영등포동6가 7)
+  const s_lat = 37.5213571;
+  const s_lng = 126.9045867;
 
   const [loading, error] = useKakaoLoader({
     appkey: import.meta.env.VITE_KAKAO_API_KEY,
@@ -40,9 +40,8 @@ export default function Location() {
                 <MapMarker position={{ lat: s_lat, lng: s_lng }} />
               </Map>
               {/* 지도 위 버튼 */}
-              {/* TODO: 영등포 웨딩그룹위더스 카카오맵 공유 링크로 교체 */}
               <a
-                href="#"
+                href={`https://map.kakao.com/link/map/영등포 웨딩그룹위더스,${s_lat},${s_lng}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute top-2 left-2 px-3 py-1 bg-white/90 text-black text-xs rounded-md font-medium shadow-md z-10 hover:bg-white transition"
@@ -79,11 +78,13 @@ export default function Location() {
           <section className="text-left">
             <div>
               <p className="font-bold">지하철로 오는 법</p>
-              <p>
-                <span>1호선 영등포역</span> 하차
+              <p className="text-[0.85rem] text-gray-600">
+                - <span className="text-gray-800">5호선 영등포시장역 하차</span> ·{" "}
+                <span className="text-gray-800 font-semibold">4번 출구</span>에서 127m
               </p>
               <p className="text-[0.85rem] text-gray-600">
-                영등포 뉴타운 지하상가 <span className="text-gray-800 font-semibold">4번 출구</span> (새길병원 방면)
+                - <span className="text-gray-800">1호선 영등포역 하차</span> · 영등포 뉴타운 지하상가{" "}
+                <span className="text-gray-800 font-semibold">4번 출구</span> (새길병원 방면)
               </p>
             </div>
           </section>

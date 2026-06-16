@@ -22,8 +22,8 @@ export default function Share() {
     Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
-        title: "💌 우리의 결혼식에 초대합니다",
-        description: "소중한 날, 함께 해주세요.",
+        title: "용희❤️주희 결혼합니다.",
+        description: "2026.09.19 토요일 12:20\n영등포 웨딩그룹위더스",
         imageUrl: `${window.location.origin}/og-image.jpg`, // ✅ 썸네일 이미지 URL (현재 도메인 기준)
         link: {
           mobileWebUrl: window.location.href,
@@ -53,9 +53,7 @@ export default function Share() {
       </button>
       <button
         onClick={() =>
-          copy(`${window.location.origin}/`, () =>
-            setShowToast(!showToast)
-          )
+          copy(`${window.location.origin}/`, () => setShowToast(!showToast))
         }
         className="bg-brand items-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground py-2 flex justify-between w-full h-12 px-5 rounded-xl"
       >

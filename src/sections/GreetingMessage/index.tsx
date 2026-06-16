@@ -1,16 +1,19 @@
+import {
+  BRIDE_FATHER,
+  BRIDE_FIRST,
+  BRIDE_MOTHER,
+  GROOM_FATHER,
+  GROOM_FIRST,
+  GROOM_MOTHER,
+} from "@/config/config";
 import GsapSection from "@/components/GsapSection";
 import SectionTitle from "@/components/SectionTitle";
-import { BRIDE_FULL, GROOM_FULL } from "@/config/config";
 
 export default function GreetingMessage() {
   const messages = [
-    "서로의 부족함까지 예쁘게 바라보며",
-    "사랑과 신뢰로 한 가정을 이루려 합니다.",
-  ];
-
-  const messages2 = [
-    "저희 두 사람이 함께하는 새로운 시작에",
-    "귀한 발걸음으로 함께해주시면 감사하겠습니다.",
+    "서로의 이름 끝에 같은 '빛날 희'로 닮은 두 사람이",
+    "서로의 빛이 되어 찬란한 삶을 함께 이루고자 합니다.",
+    "저희의 빛나는 순간을 함께해 주시면 감사하겠습니다.",
   ];
 
   return (
@@ -25,14 +28,15 @@ export default function GreetingMessage() {
 
           <div className="py-2"></div>
 
-          {messages2.map((msg, index) => (
-            <p key={msg + index} className="gsap-item h-[32px]">
-              {msg}
-            </p>
-          ))}
-
           <p className="gsap-item p-10">
-            신랑 <span className="text-point">{GROOM_FULL}</span> · 신부 <span className="text-point">{BRIDE_FULL}</span>
+            <p>
+              {GROOM_FATHER} · {GROOM_MOTHER} 아들{" "}
+              <span className="text-point">{GROOM_FIRST}</span>
+            </p>
+            <p>
+              {BRIDE_FATHER} · {BRIDE_MOTHER} 딸{" "}
+              <span className="text-point">{BRIDE_FIRST}</span>
+            </p>
           </p>
         </div>
       </SectionTitle>
