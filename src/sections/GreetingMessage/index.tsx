@@ -30,12 +30,10 @@ export default function GreetingMessage() {
 
           <p className="gsap-item p-10">
             <p>
-              {GROOM_FATHER} · {GROOM_MOTHER} 아들{" "}
-              <span className="text-point">{GROOM_FIRST}</span>
+              {GROOM_FATHER} · {GROOM_MOTHER} 아들 {GROOM_FIRST}
             </p>
             <p>
-              {BRIDE_FATHER} · {BRIDE_MOTHER} 딸{" "}
-              <span className="text-point">{BRIDE_FIRST}</span>
+              {BRIDE_FATHER} · {BRIDE_MOTHER} 딸 {BRIDE_FIRST}
             </p>
           </p>
         </div>

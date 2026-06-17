@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
-import { ArrowUpRight, Copy } from "lucide-react";
-import Toast from "@/components/Toast";
-import copy from "@/utils/copy";
+import { useEffect } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Share() {
-  const [showToast, setShowToast] = useState(false);
+  // const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     if (window.Kakao && !window.Kakao.isInitialized()) {
@@ -22,7 +20,7 @@ export default function Share() {
     Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
-        title: "용희❤️주희 결혼합니다.",
+        title: "용희♥주희 결혼합니다.",
         description: "2026.09.19 토요일 12:20\n영등포 웨딩그룹위더스",
         imageUrl: `${window.location.origin}/og-image.jpg`, // ✅ 썸네일 이미지 URL (현재 도메인 기준)
         link: {
@@ -51,7 +49,7 @@ export default function Share() {
         <div className="text-[#222222]">카카오톡으로 청첩장 전하기</div>
         <ArrowUpRight />
       </button>
-      <button
+      {/* <button
         onClick={() =>
           copy(`${window.location.origin}/`, () => setShowToast(!showToast))
         }
@@ -59,9 +57,9 @@ export default function Share() {
       >
         <div className="text-white">청첩장 주소 복사하기</div>
         <Copy size={19} />
-      </button>
+      </button> */}
 
-      {showToast && <Toast title="청첩장 주소가 복사되었습니다." />}
+      {/* {showToast && <Toast title="청첩장 주소가 복사되었습니다." />} */}
     </div>
   );
 }
