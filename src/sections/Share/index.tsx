@@ -41,7 +41,7 @@ export default function Share() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-brandLight gsap-div gap-y-3 py-9 px-9">
+    <div className="flex flex-col items-center justify-center bg-white gsap-div gap-y-3 py-9 px-9">
       <button
         onClick={handleKakaoShare}
         className="flex items-center justify-between text-sm w-full h-12 px-5 rounded-xl bg-[#FCE777] disabled:bg-[#FCE777]/50"

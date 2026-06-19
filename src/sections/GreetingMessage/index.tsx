@@ -18,7 +18,7 @@ export default function GreetingMessage() {
 
   return (
     <GsapSection>
-      <SectionTitle title="INVITATION">
+      <SectionTitle title="INVITATION" bgColor="white">
         <div className="flex flex-col items-center text-center">
           {messages.map((msg, index) => (
             <p key={msg + index} className="gsap-item h-[32px]">
@@ -28,13 +28,21 @@ export default function GreetingMessage() {
 
           <div className="py-2"></div>
 
-          <p className="gsap-item p-10">
-            <p>
-              {GROOM_FATHER} · {GROOM_MOTHER} 아들 {GROOM_FIRST}
-            </p>
-            <p>
-              {BRIDE_FATHER} · {BRIDE_MOTHER} 딸 {BRIDE_FIRST}
-            </p>
+          <p className="gsap-item w-[62%] py-10 px-4">
+            <span className="flex justify-between">
+              <span>
+                {GROOM_FATHER} · {GROOM_MOTHER}{" "}
+                <span className="inline-block w-[2em] text-center">아들</span>
+              </span>
+              <span className="font-bold">{GROOM_FIRST}</span>
+            </span>
+            <span className="flex justify-between">
+              <span>
+                {BRIDE_FATHER} · {BRIDE_MOTHER}{" "}
+                <span className="inline-block w-[2em] text-center">딸</span>
+              </span>
+              <span className="font-bold">{BRIDE_FIRST}</span>
+            </span>
           </p>
         </div>
       </SectionTitle>

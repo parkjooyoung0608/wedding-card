@@ -15,7 +15,7 @@ export default function Donation() {
 
   return (
     <GsapSection>
-      <div className="gsap-item flex flex-col justify-center h-full min-h-96 pt-10 pb-20 bg-brandLight px-8 ">
+      <div className="gsap-item flex flex-col justify-center h-full min-h-96 pt-10 pb-20 bg-white px-8 ">
         <div className="flex justify-center my-8">
           <svg
             width="60"
@@ -46,7 +46,7 @@ export default function Donation() {
               {openSection === "groom" && <AccountCard mode="groom" />}
             </div>
 
-            <div className="border-b border-none rounded-lg shadow-md mt-3 bg-brandLight">
+            <div className="border-b border-none rounded-lg shadow-md mt-3">
               <h3 className="flex">
                 <button
                   type="button"

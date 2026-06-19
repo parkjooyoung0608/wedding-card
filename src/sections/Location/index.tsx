@@ -17,6 +17,7 @@ export default function Location() {
         title="LOCATION"
         descFirst="영등포 웨딩그룹위더스"
         descSecond="서울 영등포구 영중로 55"
+        bgColor="white"
         hasCopy
         hasPhone
         phoneNumber="(전화번호 입력 필요)"
