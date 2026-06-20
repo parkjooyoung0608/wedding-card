@@ -28,14 +28,14 @@ export default function GuestBook() {
         ({
           id: doc.id,
           ...doc.data(),
-        } as IMessage)
+        }) as IMessage,
     );
     setMessages(data);
-    
+
     // 메시지 로드 후 스크롤 트리거 갱신
-    import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-      ScrollTrigger.refresh();
-    });
+    // import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+    //   ScrollTrigger.refresh();
+    // });
   };
 
   const openDeleteModal = (id: string, password: string) => {
