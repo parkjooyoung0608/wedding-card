@@ -22,12 +22,13 @@ export default function SectionTitle({
   bgColor = "brandLight",
   titleClassName = "font-lora",
   textClassName = "",
+  paddingClassName = "py-20",
 }: ISectionTitle) {
   const [showToast, setShowToast] = useState(false);
 
   return (
     <div
-      className={`flex flex-col items-center justify-center h-full gsap-div min-h-80 py-20 px-4 ${
+      className={`flex flex-col items-center justify-center h-full gsap-div min-h-80 px-4 ${paddingClassName} ${
         bgMap[bgColor] ?? ""
       } ${textClassName}`}
       style={{ backgroundColor: bgColor.startsWith("#") ? bgColor : undefined }}

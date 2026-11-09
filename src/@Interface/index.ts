@@ -19,6 +19,7 @@ interface ISectionTitle {
   bgColor?: string;
   titleClassName?: string;
   textClassName?: string;
+  paddingClassName?: string;
 }
 
 interface ITimelineItem {

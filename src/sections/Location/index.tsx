@@ -33,9 +33,10 @@ export default function Location() {
         title="LOCATION"
         titleClassName="font-plexSerif text-[1.2rem] tracking-[0.12em]"
         textClassName="text-gray-900"
+        paddingClassName="pt-20 pb-6"
         descFirst={VENUE_NAME}
         descSecond={VENUE_ADDRESS.replace("서울특별시", "서울")}
-        bgColor="#FFB9C1"
+        bgColor="white"
         hasCopy
         hasPhone
         phoneNumber="02-3474-5000"
