@@ -17,6 +17,8 @@ interface ISectionTitle {
   phoneNumber?: string;
   children: React.ReactNode;
   bgColor?: string;
+  titleClassName?: string;
+  textClassName?: string;
 }
 
 interface ITimelineItem {

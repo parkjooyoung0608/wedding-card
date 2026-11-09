@@ -15,10 +15,10 @@ import img14 from "@/assets/Images/weddingPhoto_14.jpg";
 import img15 from "@/assets/Images/weddingPhoto_15.jpg";
 import type { IPhoto } from "@/@Interface";
 
-// 3 x 5 그리드 (15장). 실제 사진으로 교체 예정.
+// 3 x 5 그리드 (15장)
 export const photos: IPhoto[] = [
-  { src: img01, position: "center 20%" },
-  { src: img02, position: "center 20%" },
+  { src: img01 },
+  { src: img02 },
   { src: img03 },
   { src: img04 },
   { src: img05 },

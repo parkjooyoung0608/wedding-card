@@ -10,7 +10,7 @@ export default function Calendar() {
       <div className="gsap-opacity">금</div>
       <div className="gsap-opacity">토</div>
 
-      {/* 빈 칸 (1일 시작 전: 9월 1일은 화요일) */}
+      {/* 빈 칸 (1일 시작 전: 6월 1일은 화요일) */}
       <div></div>
       <div></div>
 
@@ -19,7 +19,14 @@ export default function Calendar() {
       <div className="px-2 py-1 gsap-opacity">2</div>
       <div className="px-2 py-1 gsap-opacity">3</div>
       <div className="px-2 py-1 gsap-opacity">4</div>
-      <div className="px-2 py-1 gsap-opacity text-sky-700">5</div>
+      <div className="flex justify-center gsap-opacity relative z-20">
+        <span className="relative inline-flex items-center justify-center leading-none">
+          <span className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[72%] text-red-400 text-5xl leading-none">
+            ღ
+          </span>
+          <span className="relative z-10 text-sky-700">5</span>
+        </span>
+      </div>
       <div className="px-2 py-1 gsap-opacity text-red-400">6</div>
       <div className="px-2 py-1 gsap-opacity">7</div>
       <div className="px-2 py-1 gsap-opacity">8</div>
@@ -33,11 +40,7 @@ export default function Calendar() {
       <div className="px-2 py-1 gsap-opacity">16</div>
       <div className="px-2 py-1 gsap-opacity">17</div>
       <div className="px-2 py-1 gsap-opacity">18</div>
-      <div className="flex justify-center gsap-opacity gsap-opacity">
-        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-point/20 text-point font-bold">
-          19
-        </div>
-      </div>
+      <div className="px-2 py-1 gsap-opacity text-sky-700">19</div>
       <div className="px-2 py-1 gsap-opacity text-red-400">20</div>
       <div className="px-2 py-1 gsap-opacity">21</div>
       <div className="px-2 py-1 gsap-opacity">22</div>

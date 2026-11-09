@@ -31,9 +31,11 @@ export default function Location() {
     <GsapSection>
       <SectionTitle
         title="LOCATION"
+        titleClassName="font-plexSerif text-[1.2rem] tracking-[0.12em]"
+        textClassName="text-gray-900"
         descFirst={VENUE_NAME}
         descSecond={VENUE_ADDRESS.replace("서울특별시", "서울")}
-        bgColor="white"
+        bgColor="#FFB9C1"
         hasCopy
         hasPhone
         phoneNumber="02-3474-5000"
@@ -70,10 +72,23 @@ export default function Location() {
         </div>
 
         <div className="gsap-item w-full space-y-6 px-2 pb-10">
-          {/* 자차 안내 */}
+          {/* 지하철 안내 */}
           <section className="text-left">
-            <p className="font-bold">자차</p>
-            <div className="text-[0.85rem] text-gray-600 leading-relaxed">
+            <div>
+              <p className="font-bold">🚌 지하철</p>
+              <p className="text-[0.85rem] text-gray-800">
+                -{" "}
+                <span className="text-gray-800">3호선 남부터미널역 하차</span> ·{" "}
+                <span className="text-gray-800 font-semibold">4번 출구</span>{" "}
+                도보 2분
+              </p>
+            </div>
+          </section>
+
+          {/* 자가용 안내 */}
+          <section className="text-left">
+            <p className="font-bold">🚗 자가용</p>
+            <div className="text-[0.85rem] text-gray-800 leading-relaxed">
               <p>
                 네비게이션 :{" "}
                 <span className="text-gray-800 font-semibold">
@@ -90,34 +105,14 @@ export default function Location() {
                 <span className="text-gray-800">(서초·사당방면)</span> 500m
                 거리내
               </p>
-            </div>
-          </section>
-
-          {/* 주차 안내 */}
-          <section className="text-left">
-            <p className="font-bold">주차장 안내</p>
-            <div className="text-[0.85rem] text-gray-600 leading-relaxed">
               <p>- 맞은편 전용 주차장(주차타워) 이용</p>
-            </div>
-          </section>
-
-          {/* 지하철 안내 */}
-          <section className="text-left">
-            <div>
-              <p className="font-bold">지하철로 오는 법</p>
-              <p className="text-[0.85rem] text-gray-600">
-                -{" "}
-                <span className="text-gray-800">3호선 남부터미널역 하차</span> ·{" "}
-                <span className="text-gray-800 font-semibold">4번 출구</span>{" "}
-                도보 2분
-              </p>
             </div>
           </section>
 
           {/* 버스 안내 */}
           <section className="text-left mb-2">
             <div className="mb-5">
-              <p className="font-bold">버스로 오는 법</p>
+              <p className="font-bold">🚎 버스</p>
               <p className="text-gray-800">남부터미널 하차</p>
               <ul className="space-y-0.5 ml-1 text-[0.85rem]">
                 <li className="flex gap-1">

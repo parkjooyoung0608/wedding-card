@@ -20,6 +20,8 @@ export default function SectionTitle({
   phoneNumber,
   children,
   bgColor = "brandLight",
+  titleClassName = "font-lora",
+  textClassName = "",
 }: ISectionTitle) {
   const [showToast, setShowToast] = useState(false);
 
@@ -27,10 +29,10 @@ export default function SectionTitle({
     <div
       className={`flex flex-col items-center justify-center h-full gsap-div min-h-80 py-20 px-4 ${
         bgMap[bgColor] ?? ""
-      }`}
+      } ${textClassName}`}
       style={{ backgroundColor: bgColor.startsWith("#") ? bgColor : undefined }}
     >
-      <h1 className="gsap-item font-lora">{title}</h1>
+      <h1 className={`gsap-item ${titleClassName}`}>{title}</h1>
       <div className="p-10">
         <div className="gsap-item flex justify-center items-center mb-2 gap-1">
           <p>{descFirst}</p>

@@ -15,19 +15,7 @@ export default function Donation() {
 
   return (
     <GsapSection>
-      <div className="gsap-item flex flex-col justify-center h-full min-h-96 pt-10 pb-20 bg-white px-8 ">
-        <div className="flex justify-center my-8">
-          <svg
-            width="60"
-            height="1"
-            viewBox="0 0 60 1"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line y1="0.5" x2="60" y2="0.5" stroke="black"></line>
-          </svg>
-        </div>
-
+      <div className="gsap-item flex flex-col justify-center h-full min-h-96 pt-10 pb-20 bg-black px-8 ">
         <Title />
 
         <div className="gsap-item mt-4 rounded-lg">

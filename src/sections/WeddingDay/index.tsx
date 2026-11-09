@@ -15,6 +15,9 @@ export default function WeddingDay() {
     <GsapSection>
       <SectionTitle
         title="WEDDING DAY"
+        titleClassName="font-plexSerif text-[1.2rem] tracking-[0.12em]"
+        textClassName="text-gray-900"
+        bgColor="#FFB9C1"
         descFirst={`${WEDDING_DATE} ${WEDDING_DAY} | ${WEDDING_TIME}`}
         descSecond={`${WEDDING_DATE_EN} | ${WEDDING_TIME_NUMBER}`}
       >

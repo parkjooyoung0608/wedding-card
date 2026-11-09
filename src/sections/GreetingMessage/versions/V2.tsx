@@ -12,7 +12,7 @@ export default function GreetingMessageV2() {
   return (
     <div className="w-full bg-black text-white pt-28 pb-10">
       <div className="text-center px-6">
-        <h2 className="font-plexSerif text-[1.05rem] tracking-[0.12em]">
+        <h2 className="font-plexSerif text-[1.2rem] tracking-[0.12em]">
           WELCOME TO OUR WEDDING
         </h2>
         <p className="font-dynalight text-lg mt-3">
