@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         birthstone: ['"Birthstone"', "cursive"],
+        dynalight: ['"Dynalight"', "cursive"],
+        plexSerif: ['"IBM Plex Serif"', "serif"],
         lora: ['"Lora"', "serif"],
         body: ["system-ui", "Avenir", "Helvetica", "Arial", "sans-serif"],
       },
