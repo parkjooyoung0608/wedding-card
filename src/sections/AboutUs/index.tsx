@@ -1,28 +1,9 @@
-import GsapSection from "@/components/GsapSection";
-import SectionTitle from "@/components/SectionTitle";
-import Polaroid from "@/sections/AboutUs/Polaroid";
+import { useSectionVersion } from "@/context/sectionVersion";
+import AboutUsV1 from "@/sections/AboutUs/versions/V1";
+import AboutUsV2 from "@/sections/AboutUs/versions/V2";
 
+/** 부모님 소개 - 선택된 버전을 렌더 */
 export default function AboutUs() {
-  return (
-    <GsapSection>
-      <SectionTitle
-        title="ABOUT US"
-        descFirst="저희 커플을 소개합니다"
-        descSecond="하나로 이어진 두개의 우주"
-      >
-        <div className="gsap-opacity mt-4 w-3/4 flex flex-col space-y-4">
-          <Polaroid
-            mode="groom"
-            birthDate="1995년 12월 서울 출생"
-            tagline="호기심 많은 손재주 왕 📽"
-          />
-          <Polaroid
-            mode="bride"
-            birthDate="1995년 11월 서울 출생"
-            tagline="호기심 많은 손재주 왕 📽"
-          />
-        </div>
-      </SectionTitle>
-    </GsapSection>
-  );
+  const version = useSectionVersion("aboutUs");
+  return version === "v2" ? <AboutUsV2 /> : <AboutUsV1 />;
 }

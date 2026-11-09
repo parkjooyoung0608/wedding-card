@@ -28,3 +28,6 @@ hosting.*.cache
 .env
 
 src/assets/Images/original_backup
+
+# 관리자 페이지 "선택하기" 결과 (로컬 브릿지 파일)
+admin-selection.json

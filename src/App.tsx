@@ -1,8 +1,8 @@
 import Play from "@/components/Play";
 import Hero from "@/sections/Hero";
 import GreetingMessage from "@/sections/GreetingMessage";
+import AboutUs from "@/sections/AboutUs";
 import WeddingDay from "@/sections/WeddingDay";
-// import AboutUs from "@/sections/AboutUs";
 // import Timeline from "@/sections/Timeline";
 import Gallery from "@/sections/Gallery";
 import Location from "@/sections/Location";
@@ -61,9 +61,10 @@ function App() {
         <Play />
         <Hero />
         <GreetingMessage />
+        <AboutUs />
+        <Gallery />
         <WeddingDay />
         <Location />
-        <Gallery />
         <Donation />
         {/* <GuestBook /> */}
         {/* <RSVP /> */}
