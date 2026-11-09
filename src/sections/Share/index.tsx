@@ -20,8 +20,8 @@ export default function Share() {
     Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
-        title: "용희♥주희 결혼합니다.",
-        description: "2026.09.19 토요일 12:20\n영등포 웨딩그룹위더스",
+        title: "용호♥주영 결혼합니다.",
+        description: "2027.06.05 토요일 오전 11시\n더화이트베일",
         imageUrl: `${window.location.origin}/og-image.jpg`, // ✅ 썸네일 이미지 URL (현재 도메인 기준)
         link: {
           mobileWebUrl: window.location.href,
